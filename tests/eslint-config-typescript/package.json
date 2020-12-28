@@ -1,0 +1,22 @@
+{
+  "name": "tests-eslint-config-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint --ext .js,.ts ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": [
+      "../../packages/eslint-config-typescript"
+    ]
+  },
+  "devDependencies": {
+    "@fbi-js/tsconfig": "0.0.0",
+    "eslint": "^7.16.0",
+    "typescript": "^4.1.3"
+  }
+}

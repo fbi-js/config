@@ -1,0 +1,33 @@
+{
+  "name": "fbi-config-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "tests/*"
+  ],
+  "scripts": {
+    "dev": "lerna run dev",
+    "build": "lerna run --parallel build",
+    "lint": "eslint packages/*/src/**/*.ts",
+    "format": "prettier --write packages/*/src/**/*.ts",
+    "clean": "lerna run --parallel clean",
+    "release": "lerna publish"
+  },
+  "devDependencies": {
+    "@fbi-js/factory-node": "^2.1.0",
+    "eslint": "^7.16.0"
+  },
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": [
+      "./packages/eslint-config-typescript"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "endOfLine": "auto"
+  }
+}

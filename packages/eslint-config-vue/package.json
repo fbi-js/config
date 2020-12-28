@@ -1,0 +1,24 @@
+{
+  "name": "@fbi-js/eslint-config-vue",
+  "version": "0.0.0",
+  "description": "fbi js eslint config",
+  "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-vue",
+  "repository": "fbi-js/config",
+  "license": "MIT",
+  "contributors": [
+    "neikvon <neikvon@hotmail.com>"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "vue-eslint-parser": "^7.3.0",
+    "eslint-plugin-vue": "^7.4.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 7.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

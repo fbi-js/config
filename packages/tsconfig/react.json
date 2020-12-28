@@ -1,0 +1,10 @@
+{
+  "extends": "./base.json",
+  "compilerOptions": {
+    // Specify ECMAScript target version
+    "target": "ES5",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    // Support JSX in .tsx files
+    "jsx": "react-jsx"
+  }
+}

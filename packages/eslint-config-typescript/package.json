@@ -1,0 +1,26 @@
+{
+  "name": "@fbi-js/eslint-config-typescript",
+  "version": "0.0.0",
+  "description": "fbi js eslint config",
+  "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-typescript",
+  "repository": "fbi-js/config",
+  "license": "MIT",
+  "contributors": [
+    "neikvon <neikvon@hotmail.com>"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@fbi-js/eslint-config": "0.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "eslint-config-standard-with-typescript": "^19.0.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.16.0",
+    "typescript": ">=3.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
