@@ -1,6 +1,3 @@
-import 'node'
-import Vue from 'vue'
-
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test'
@@ -9,6 +6,7 @@ declare namespace NodeJS {
 }
 
 declare module '*.vue' {
+  import Vue from 'vue'
   export default Vue
 }
 

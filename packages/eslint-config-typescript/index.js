@@ -11,5 +11,6 @@ module.exports = {
         ignoredNodes: ['TemplateLiteral *', 'VariableDeclaration *'],
       },
     ],
+    '@typescript-eslint/promise-function-async': 'off',
   },
 }

@@ -1,22 +1,27 @@
 {
-  "name": "tests-eslint-config-typescript",
+  "name": "tests-react-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint --ext .js,.ts ."
+    "lint": "npx eslint --ext .js,.ts,jsx,.tsx ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "eslintConfig": {
     "extends": [
+      "../../packages/eslint-config-react",
       "../../packages/eslint-config-typescript"
     ]
   },
   "devDependencies": {
     "@fbi-js/tsconfig": "0.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "eslint": "^7.16.0",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

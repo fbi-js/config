@@ -3,6 +3,7 @@
   "editor.formatOnSave": true,
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
   "files.autoSave": "onFocusChange",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "[javascript]": {
     "editor.defaultFormatter": "numso.prettier-standard-vscode"
@@ -15,5 +16,11 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "numso.prettier-standard-vscode"
-  }
+  },
+  // vetur
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.ts": "vscode-typescript",
+  "vetur.format.styleInitialIndent": true,
+  "vetur.format.scriptInitialIndent": true
 }
