@@ -2,13 +2,13 @@
   <router-view />
 </template>
 
-<script lang="ts">
+<script>
   export default {
     name: 'App',
 
     methods: {
       a () {
-        let a
+        const b = ''
       }
     }
   }

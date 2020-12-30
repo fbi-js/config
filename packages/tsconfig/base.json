@@ -15,7 +15,7 @@
     // Disallow inconsistently-cased references to the same file
     "forceConsistentCasingInFileNames": true,
     // Unconditionally emit imports for unresolved files
-    "isolatedModules": true,
+    "isolatedModules": false,
     // List of library files to be included in the compilation
     "lib": ["ESNext", "DOM"],
     // Specify module code generation
@@ -25,7 +25,7 @@
     // Resolve modules using Node.js style
     "moduleResolution": "node",
     // Do not emit output (meaning do not compile code, only perform type checking)
-    "noEmit": true,
+    "noEmit": false,
     // Report errors for fallthrough cases in switch statement
     "noFallthroughCasesInSwitch": true,
     // Report an error when not all code paths in function return a value.
@@ -52,6 +52,5 @@
     "strict": true,
     // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
     "incremental": true
-  },
-  "exclude": ["node_modules"]
+  }
 }

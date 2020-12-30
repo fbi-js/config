@@ -1,7 +1,7 @@
 {
   "extends": "@fbi-js/tsconfig/react",
   "compilerOptions": {
-    "outDir": "lib"
-  },
-  "include": ["src"]
+    "baseUrl": "./",
+    "outDir": "dist"
+  }
 }

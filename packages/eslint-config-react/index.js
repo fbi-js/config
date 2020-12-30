@@ -1,4 +1,6 @@
 module.exports = {
-  parser: 'babel-eslint',
   extends: ['@fbi-js', 'standard-jsx', 'standard-react'],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+  },
 }

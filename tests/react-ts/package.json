@@ -4,18 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint --ext .js,.ts,jsx,.tsx ."
+    "lint": "npx eslint src",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "eslintConfig": {
     "extends": [
-      "../../packages/eslint-config-react",
-      "../../packages/eslint-config-typescript"
+      "@fbi-js/react-typescript"
     ]
   },
   "devDependencies": {
+    "@fbi-js/eslint-config-react-typescript": "^0.0.0",
     "@fbi-js/tsconfig": "0.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

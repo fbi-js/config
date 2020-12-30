@@ -1,7 +1,6 @@
 {
   "extends": "@fbi-js/tsconfig/base",
   "compilerOptions": {
-    "outDir": "lib"
-  },
-  "include": ["src/**/*.ts"]
+    "outDir": "./lib"
+  }
 }

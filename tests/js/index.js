@@ -7,3 +7,5 @@ function b (x) {
 }
 
 b(a)
+
+var x

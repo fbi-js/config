@@ -3,7 +3,7 @@ import React from 'react'
 import '@/app.css'
 import Logo from '@/logo.svg'
 
-const App: React.FunctionComponent = () => {
+const App = () => {
   return (
     <div className='app'>
       <header className='app-header'>
