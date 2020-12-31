@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint src",
-    "build": "tsc",
-    "b": "webpack"
+    "build": "webpack --config webpack.config.js",
+    "serve": "webpack serve --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fbi-js/webpack-config-base": "^0.0.0",
+    "@fbi-js/webpack-config-vue": "^0.0.0",
     "@fbi-js/eslint-config-vue-typescript": "^0.0.0",
     "@fbi-js/tsconfig": "0.0.0",
     "eslint": "^7.16.0",
@@ -20,11 +22,6 @@
     "vue-router": "^3.4.9",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@fbi-js/vue-typescript"
-    ]
   },
   "prettier": {
     "semi": false,

@@ -7,3 +7,4 @@ dist
 *-error.log
 node_modules/
 tsconfig.tsbuildinfo
+yarn.lock

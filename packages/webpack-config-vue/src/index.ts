@@ -24,12 +24,16 @@ export default ({ webpackConfig }: ConfigFunctionParams): Configuration => {
     plugins: [
       new ESLintPlugin({
         extensions: ['js', 'ts', 'jsx', 'tsx', 'vue'],
-        files: 'src'
-        // fix: true
-      } as any),
+        files: 'src',
+        allowInlineConfig: false,
+        baseConfig: {
+          extends: ['@fbi-js/vue-typescript']
+        }
+      }),
 
       new StyleLintPlugin({
-        files: 'src/**/*.{css,scss,vue}'
+        files: '**/*.{css,scss,vue}',
+        configFile: require.resolve('@fbi-js/stylelint-config')
       }),
 
       new VueLoaderPlugin()

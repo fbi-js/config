@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-react",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@fbi-js/tsconfig": "^0.0.0",
+    "@fbi-js/eslint-config-react-typescript": "^0.0.0",
     "webpack-merge": "^5.7.3",
     "eslint": "^7.16.0",
     "eslint-webpack-plugin": "^2.4.1",

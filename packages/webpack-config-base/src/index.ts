@@ -21,7 +21,7 @@ export * from './types'
 export * from './utils'
 export * from './defaults'
 
-export const resolveConfig = (
+export default (
   { options }: ConfigFunctionParams = { options: {}, webpackConfig: {} }
 ): Configuration => {
   const isDev = !isProd()
@@ -217,13 +217,23 @@ export const resolveConfig = (
     ].filter(Boolean),
     resolve: {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.mjs', '.wasm', '.json'],
-      modules: ['node_modules', join(__dirname, '../node_modules')],
+      modules: [
+        'node_modules',
+        join(__dirname, '../node_modules'),
+        // TODO: remove
+        join(__dirname, '../../../node_modules')
+      ],
       alias: {
         '@': resolve('src/')
       }
     },
     resolveLoader: {
-      modules: ['node_modules', join(__dirname, '../node_modules')]
+      modules: [
+        'node_modules',
+        join(__dirname, '../node_modules'),
+        // TODO: remove
+        join(__dirname, '../../../node_modules')
+      ]
     },
     performance: {
       hints: false
