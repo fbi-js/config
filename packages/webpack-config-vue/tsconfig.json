@@ -1,10 +1,6 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@fbi-js/tsconfig/base",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "lib",
-    "composite": true
-  },
-  "include": ["src/**/*.ts", "typings.d.ts"],
-  "exclude": ["node_modules", "tests"]
+    "outDir": "./lib"
+  }
 }

@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "@fbi-js/factory-node": "^2.1.0",
-    "eslint": "^7.16.0"
+    "eslint": "^7.16.0",
+    "rimraf": "^3.0.2"
   },
   "license": "MIT",
   "eslintConfig": {
@@ -27,7 +28,7 @@
     "semi": false,
     "tabWidth": 2,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "none",
     "endOfLine": "auto"
   }
 }

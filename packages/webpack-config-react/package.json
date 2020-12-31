@@ -11,8 +11,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "npm run clean && tsc -b .",
     "dev": "tsc --preserveWatchOutput -w",
+    "build": "npm run clean && tsc -b .",
     "clean": "rimraf lib tsconfig.tsbuildinfo"
   },
   "keywords": [],
@@ -20,5 +20,19 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@fbi-js/tsconfig": "^0.0.0",
+    "webpack-merge": "^5.7.3",
+    "eslint": "^7.16.0",
+    "eslint-webpack-plugin": "^2.4.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-webpack-plugin": "^2.1.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "@fbi-js/webpack-config-base": "^0.0.0"
   }
 }
