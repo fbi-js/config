@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -22,10 +22,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@fbi-js/tsconfig": "^0.0.0",
-    "@fbi-js/webpack-config-base": "^0.0.0",
-    "@fbi-js/stylelint-config": "^0.0.0",
-    "@fbi-js/eslint-config-vue-typescript": "^0.0.0",
+    "@fbi-js/eslint-config-vue-typescript": "^0.0.1",
+    "@fbi-js/stylelint-config": "^0.0.1",
+    "@fbi-js/tsconfig": "^0.0.1",
+    "@fbi-js/webpack-config-base": "^0.0.1",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12"
   },

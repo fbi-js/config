@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/stylelint-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "fbi js eslint config",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config",
   "repository": "fbi-js/config",
@@ -13,8 +13,8 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-config-prettier": "^8.0.2"
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0"
   },
   "peerDependencies": {
     "stylelint": "^13.8.0"
