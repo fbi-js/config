@@ -1,5 +1,7 @@
 import { Configuration } from 'webpack'
-import { ConfigFunctionParams } from '@fbi-js/webpack-config-base'
+import webpackConfigBase, {
+  ConfigFunctionParams
+} from '@fbi-js/webpack-config-base'
 
 import { resolve } from 'path'
 import { merge } from 'webpack-merge'
@@ -7,7 +9,12 @@ import { VueLoaderPlugin } from 'vue-loader'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
 
-export default ({ webpackConfig }: ConfigFunctionParams): Configuration => {
+export default ({
+  webpackConfig,
+  options
+}: ConfigFunctionParams): Configuration => {
+  const baseConfig = webpackConfigBase({ options })
+
   const config = {
     module: {
       rules: [
@@ -46,5 +53,5 @@ export default ({ webpackConfig }: ConfigFunctionParams): Configuration => {
     }
   }
 
-  return merge(webpackConfig, config as Configuration)
+  return merge(baseConfig, webpackConfig || {}, config as Configuration)
 }

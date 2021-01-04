@@ -1,11 +1,18 @@
 import { Configuration } from 'webpack'
-import { ConfigFunctionParams } from '@fbi-js/webpack-config-base'
+import webpackConfigBase, {
+  ConfigFunctionParams
+} from '@fbi-js/webpack-config-base'
 
 import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
 
-export default ({ webpackConfig }: ConfigFunctionParams): Configuration => {
+export default ({
+  webpackConfig,
+  options
+}: ConfigFunctionParams): Configuration => {
+  const baseConfig = webpackConfigBase({ options })
+
   const config = {
     plugins: [
       new ESLintPlugin({
@@ -23,5 +30,5 @@ export default ({ webpackConfig }: ConfigFunctionParams): Configuration => {
     ]
   }
 
-  return merge(webpackConfig, config)
+  return merge(baseConfig, webpackConfig || {}, config)
 }

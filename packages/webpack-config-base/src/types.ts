@@ -12,12 +12,7 @@ export interface IFactoryPaths {
   assets: string
 }
 
-// export interface WebpackConfiguration extends Configuration {
-//   // resolve: webpack.ResolveOptions
-//   // devServer: DevServerConfiguration
-// }
-
 export type ConfigFunctionParams = {
-  webpackConfig: Configuration
+  webpackConfig?: Configuration
   options: Record<string, any>
 }
