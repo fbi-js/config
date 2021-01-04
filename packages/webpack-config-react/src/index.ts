@@ -14,5 +14,5 @@ export default ({
     options: resolveOptions(options)
   })
 
-  return merge(baseConfig, webpackConfig || {})
+  return merge(baseConfig, webpackConfig ?? {})
 }

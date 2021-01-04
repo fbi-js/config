@@ -43,7 +43,7 @@ export default ({
     },
     output: {
       path: options.paths.dist,
-      publicPath: process.env.ASSET_PATH || '/',
+      publicPath: process.env.ASSET_PATH ?? '/',
       filename: isDev
         ? '[name].js?v=[fullhash]'
         : `${options.paths.js}/[name].[fullhash].js`,
@@ -134,11 +134,11 @@ export default ({
     },
     plugins: [
       new WebpackBar({
-        name: options.title || 'project',
+        name: options.title ?? 'project',
         color: '#0052D9'
       }),
       // Make appName & appVersion available as a constant
-      new webpack.DefinePlugin(options.definePluginData || {}),
+      new webpack.DefinePlugin(options.definePluginData),
       // Removes/cleans build folders and unused assets when rebuilding
       new CleanWebpackPlugin(),
       // Copies files from target to destination folder
@@ -157,7 +157,7 @@ export default ({
         : null,
       hasTemplateFile
         ? new HtmlWebpackPlugin({
-            title: options.title || 'My App',
+            title: options.title ?? 'My App',
             template: htmlWebpackPluginTemplatePath,
             filename: 'index.html', // output file
             // https://github.com/jantimon/html-webpack-plugin/blob/657bc605a5dbdbbdb4f8154bd5360492c5687fc9/examples/template-parameters/webpack.config.js#L20
@@ -176,7 +176,7 @@ export default ({
                   options
                 },
                 isLocal: isDev,
-                serverUrl: `http://localhost:${options.port}`
+                serverUrl: `http://localhost:${options.port as string}`
               }
             }
           })
@@ -185,9 +185,7 @@ export default ({
       new StyleLintPlugin(options.stylelint),
       isDev
         ? new webpack.HotModuleReplacementPlugin()
-        : // Extracts CSS into separate files
-          // Note: style-loader is for development, MiniCssExtractPlugin is for production
-          new MiniCssExtractPlugin({
+        : new MiniCssExtractPlugin({
             filename: `${options.paths.css}/[name].[contenthash].css`
           })
     ].filter(Boolean),
@@ -222,7 +220,7 @@ export default ({
         })
   }
 
-  if (options.isTs) {
+  if (options.isTs && Array.isArray(config.plugins)) {
     config.plugins.push(
       new ForkTsCheckerWebpackPlugin({
         typescript: {

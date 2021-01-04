@@ -38,5 +38,5 @@ export default ({
     }
   }
 
-  return merge(baseConfig, webpackConfig || {}, config as any)
+  return merge(baseConfig, webpackConfig ?? {}, config as any)
 }
