@@ -26,14 +26,7 @@
     "@fbi-js/webpack-config-base": "^0.0.0",
     "@fbi-js/stylelint-config": "^0.0.0",
     "@fbi-js/eslint-config-vue-typescript": "^0.0.0",
-    "eslint": "^7.17.0",
-    "eslint-webpack-plugin": "^2.4.1",
-    "stylelint": "^13.8.0",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-webpack-plugin": "^2.1.1",
     "vue-loader": "^15.9.6",
-    "webpack-merge": "^5.7.3",
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {

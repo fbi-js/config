@@ -1,19 +1,20 @@
 import { Configuration } from 'webpack'
 import webpackConfigBase, {
+  merge,
   ConfigFunctionParams
 } from '@fbi-js/webpack-config-base'
 
 import { resolve } from 'path'
-import { merge } from 'webpack-merge'
 import { VueLoaderPlugin } from 'vue-loader'
-import ESLintPlugin from 'eslint-webpack-plugin'
-import StyleLintPlugin from 'stylelint-webpack-plugin'
+import resolveOptions from './options'
 
 export default ({
   webpackConfig,
   options
-}: ConfigFunctionParams): Configuration => {
-  const baseConfig = webpackConfigBase({ options })
+}: ConfigFunctionParams = {}): Configuration => {
+  const baseConfig = webpackConfigBase({
+    options: resolveOptions(options)
+  })
 
   const config = {
     module: {
@@ -28,23 +29,7 @@ export default ({
         }
       ]
     },
-    plugins: [
-      new ESLintPlugin({
-        extensions: ['js', 'ts', 'jsx', 'tsx', 'vue'],
-        files: 'src',
-        allowInlineConfig: false,
-        baseConfig: {
-          extends: ['@fbi-js/vue-typescript']
-        }
-      }),
-
-      new StyleLintPlugin({
-        files: '**/*.{css,scss,vue}',
-        configFile: require.resolve('@fbi-js/stylelint-config')
-      }),
-
-      new VueLoaderPlugin()
-    ],
+    plugins: [new VueLoaderPlugin()],
     resolve: {
       extensions: ['.vue'],
       alias: {
@@ -53,5 +38,5 @@ export default ({
     }
   }
 
-  return merge(baseConfig, webpackConfig || {}, config as Configuration)
+  return merge(baseConfig, webpackConfig || {}, config as any)
 }

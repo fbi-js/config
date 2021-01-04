@@ -1,6 +1,6 @@
-import reactConfig from '@fbi-js/webpack-config-react'
+import config from '@fbi-js/webpack-config-react'
 
-export default reactConfig({
+export default config({
   options: {
     isTs: true
   }

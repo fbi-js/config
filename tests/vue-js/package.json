@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": "true",
   "scripts": {
-    "lint": "npx eslint src"
+    "lint": "npx eslint src",
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@fbi-js/eslint-config-vue": "^0.0.0",
-    "eslint": "^7.16.0",
+    "eslint": "^7.17.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9"
   },

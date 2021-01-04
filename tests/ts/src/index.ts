@@ -14,4 +14,4 @@ const c = function (a: string): string {
 
 c('')
 
-var y
+// var y

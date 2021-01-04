@@ -1,7 +1,4 @@
-import { IFactoryPaths } from './types'
-
 import { networkInterfaces } from 'os'
-import { paths } from './defaults'
 
 /**
  * get ip address with IPv4, default ip address is 0.0.0.0
@@ -40,15 +37,4 @@ export const isProd = () => {
  */
 export const isDev = () => {
   return !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
-}
-
-/**
- * merge paths in ../configs/constant/paths & fbi.paths in package.json
- * @param userPaths fbi.paths in package.json
- */
-export const getMergePaths = (userPaths?: IFactoryPaths) => {
-  return {
-    ...paths,
-    ...userPaths
-  }
 }

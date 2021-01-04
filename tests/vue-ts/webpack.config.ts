@@ -1,6 +1,6 @@
-import vueConfig from '@fbi-js/webpack-config-vue'
+import config from '@fbi-js/webpack-config-vue'
 
-export default vueConfig({
+export default config({
   options: {
     isTs: true
   }

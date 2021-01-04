@@ -8,7 +8,6 @@
 
     methods: {
       a () {
-        const b = ''
       }
     }
   }

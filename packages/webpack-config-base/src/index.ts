@@ -1,49 +1,55 @@
 import { ConfigFunctionParams } from './types'
 
-import webpack, { Configuration } from 'webpack'
+import fs from 'fs'
 import { join, resolve } from 'path'
+import webpack, { Configuration } from 'webpack'
 import WebpackBar from 'webpackbar'
+import { merge } from 'webpack-merge'
+import ESLintPlugin from 'eslint-webpack-plugin'
+import StyleLintPlugin from 'stylelint-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
-import { getMergePaths, isProd, getEnvMode } from './utils'
-import {
-  WEBPACK_DEV_SERVER_CONFIG,
-  WEBPACK_DEV_STATS,
-  WEBPACK_BUILD_STATS
-} from './defaults'
+import { isProd, getEnvMode } from './utils'
+import resolveOptions from './options'
 
 export * from './types'
 export * from './utils'
-export * from './defaults'
 
-export default (
-  { options }: ConfigFunctionParams = { options: {}, webpackConfig: {} }
-): Configuration => {
+export * from 'webpack-merge'
+
+export default ({
+  options: userOptions,
+  webpackConfig
+}: ConfigFunctionParams = {}): Configuration => {
+  const options = resolveOptions(userOptions)
   const isDev = !isProd()
-  const isTs = options.isTs
-  const paths = getMergePaths(options.paths)
-  const htmlWebpackPluginTemplatePath = join(paths.public, 'index.html')
+  const htmlWebpackPluginTemplatePath = join(options.paths.public, 'index.html')
+  const hasTemplateFile = fs.existsSync(htmlWebpackPluginTemplatePath)
+  const hasPublicFolder = fs.existsSync(options.paths.public)
+
+  if (options.isTs) {
+    options.babel?.presets.push('@babel/preset-typescript')
+  }
 
   const config = {
     mode: getEnvMode(),
     devtool: isDev ? 'inline-source-map' : false,
     entry: {
-      main: join(paths.src, `main.${isTs ? 'ts' : 'js'}`)
+      main: join(options.paths.src, `main.${options.isTs ? 'ts' : 'js'}`)
     },
     output: {
-      path: paths.dist,
+      path: options.paths.dist,
       publicPath: process.env.ASSET_PATH || '/',
       filename: isDev
         ? '[name].js?v=[fullhash]'
-        : `${paths.js}/[name].[fullhash].js`,
+        : `${options.paths.js}/[name].[fullhash].js`,
       assetModuleFilename: isDev
         ? '[name][ext][query]'
-        : `${paths.assets}/[name].[hash][ext][query]`
+        : `${options.paths.assets}/[name].[hash][ext][query]`
     },
     cache: {
       type: 'filesystem'
@@ -56,13 +62,7 @@ export default (
           exclude: resolve('node_modules'),
           use: {
             loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                isTs ? '@babel/preset-typescript' : ''
-              ].filter(Boolean),
-              plugins: ['@babel/plugin-proposal-class-properties']
-            }
+            options: options.babel
           }
         },
         {
@@ -76,7 +76,7 @@ export default (
           generator: {
             filename: isDev
               ? '[name][ext][query]'
-              : `${paths.img}/[name].[hash][ext][query]`
+              : `${options.paths.img}/[name].[hash][ext][query]`
           }
         },
         {
@@ -99,34 +99,18 @@ export default (
                 },
                 {
                   loader: 'postcss-loader',
-                  options: {
-                    sourceMap: true,
-                    postcssOptions: {
-                      plugins: [
-                        [
-                          'postcss-preset-env',
-                          {
-                            // Options
-                          }
-                        ]
-                      ]
-                    }
-                  }
+                  options: options.postcss
                 },
                 {
                   loader: 'sass-loader',
-                  options: {
-                    sourceMap: true,
-                    // Prefer `dart-sass`
-                    implementation: require('sass')
-                  }
+                  options: options.sass
                 }
               ]
             : [
                 {
                   loader: MiniCssExtractPlugin.loader,
                   options: {
-                    publicPath: paths.cssExtractPublicPath
+                    publicPath: options.paths.cssExtractPublicPath
                   }
                 },
                 {
@@ -138,25 +122,11 @@ export default (
                 },
                 {
                   loader: 'postcss-loader',
-                  options: {
-                    postcssOptions: {
-                      plugins: [
-                        [
-                          'postcss-preset-env',
-                          {
-                            // Options
-                          }
-                        ]
-                      ]
-                    }
-                  }
+                  options: options.postcss
                 },
                 {
                   loader: 'sass-loader',
-                  options: {
-                    // Prefer `dart-sass`
-                    implementation: require('sass')
-                  }
+                  options: options.sass
                 }
               ]
         }
@@ -164,7 +134,7 @@ export default (
     },
     plugins: [
       new WebpackBar({
-        name: options.pkg?.name || 'project',
+        name: options.title || 'project',
         color: '#0052D9'
       }),
       // Make appName & appVersion available as a constant
@@ -172,47 +142,53 @@ export default (
       // Removes/cleans build folders and unused assets when rebuilding
       new CleanWebpackPlugin(),
       // Copies files from target to destination folder
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: paths.public,
-            globOptions: {
-              dot: true
-            },
-            filter: resourcePath => !resourcePath.endsWith('index.html')
-          }
-        ]
-      }),
-      new HtmlWebpackPlugin({
-        title: options.title || 'My App',
-        template: htmlWebpackPluginTemplatePath,
-        filename: 'index.html', // output file
-        // https://github.com/jantimon/html-webpack-plugin/blob/657bc605a5dbdbbdb4f8154bd5360492c5687fc9/examples/template-parameters/webpack.config.js#L20
-        templateParameters: (
-          compilation: { options: any },
-          assets: any,
-          assetTags: any,
-          options: any
-        ) => {
-          return {
-            compilation,
-            webpackConfig: compilation.options,
-            htmlWebpackPlugin: {
-              tags: assetTags,
-              files: assets,
-              options
-            },
-            isLocal: isDev,
-            serverUrl: `http://localhost:${options.port}`
-          }
-        }
-      }),
+      hasPublicFolder
+        ? new CopyWebpackPlugin({
+            patterns: [
+              {
+                from: options.paths.public,
+                globOptions: {
+                  dot: true
+                },
+                filter: resourcePath => !resourcePath.endsWith('index.html')
+              }
+            ]
+          })
+        : null,
+      hasTemplateFile
+        ? new HtmlWebpackPlugin({
+            title: options.title || 'My App',
+            template: htmlWebpackPluginTemplatePath,
+            filename: 'index.html', // output file
+            // https://github.com/jantimon/html-webpack-plugin/blob/657bc605a5dbdbbdb4f8154bd5360492c5687fc9/examples/template-parameters/webpack.config.js#L20
+            templateParameters: (
+              compilation: { options: any },
+              assets: any,
+              assetTags: any,
+              options: any
+            ) => {
+              return {
+                compilation,
+                webpackConfig: compilation.options,
+                htmlWebpackPlugin: {
+                  tags: assetTags,
+                  files: assets,
+                  options
+                },
+                isLocal: isDev,
+                serverUrl: `http://localhost:${options.port}`
+              }
+            }
+          })
+        : null,
+      new ESLintPlugin(options.eslint),
+      new StyleLintPlugin(options.stylelint),
       isDev
         ? new webpack.HotModuleReplacementPlugin()
         : // Extracts CSS into separate files
           // Note: style-loader is for development, MiniCssExtractPlugin is for production
           new MiniCssExtractPlugin({
-            filename: `${paths.css}/[name].[contenthash].css`
+            filename: `${options.paths.css}/[name].[contenthash].css`
           })
     ].filter(Boolean),
     resolve: {
@@ -235,35 +211,18 @@ export default (
         join(__dirname, '../../../node_modules')
       ]
     },
-    performance: {
-      hints: false
-    },
-    stats: isDev ? WEBPACK_DEV_STATS : WEBPACK_BUILD_STATS,
+    stats: options.stats,
     ...(isDev
       ? {
-          devServer: WEBPACK_DEV_SERVER_CONFIG
+          devServer: options.devServer
         }
       : {
-          optimization: {
-            minimize: true,
-            minimizer: [`...`, new CssMinimizerPlugin()],
-            // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
-            // instead of having their own. This also helps with long-term caching, since the chunks will only
-            // change when actual code changes, not the webpack runtime.
-            runtimeChunk: {
-              name: 'runtime'
-            },
-            chunkIds: 'named'
-          },
-          performance: {
-            hints: false,
-            maxEntrypointSize: 512000,
-            maxAssetSize: 512000
-          }
+          optimization: options.optimization,
+          performance: options.performance
         })
   }
 
-  if (isTs) {
+  if (options.isTs) {
     config.plugins.push(
       new ForkTsCheckerWebpackPlugin({
         typescript: {
@@ -277,5 +236,5 @@ export default (
     )
   }
 
-  return config as Configuration
+  return merge(config, (webpackConfig as any) || {})
 }

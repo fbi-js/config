@@ -15,10 +15,10 @@
     "@fbi-js/eslint-config": "^0.0.0",
     "eslint-config-standard-jsx": "^10.0.0",
     "eslint-config-standard-react": "^11.0.1",
-    "eslint-plugin-react": "^7.21.5"
+    "eslint-plugin-react": "^7.22.0"
   },
   "peerDependencies": {
-    "eslint": ">= 7.16.0"
+    "eslint": ">=7.17.0"
   },
   "publishConfig": {
     "access": "public"
