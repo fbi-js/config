@@ -10,7 +10,7 @@ export default (options: Partial<Options> = {}): Partial<Options> => ({
     }
   },
   stylelint: {
-    files: '**/*.{css,scss,vue}',
+    files: 'src/**/*.{css,scss,vue}',
     configFile: require.resolve('@fbi-js/stylelint-config'),
     allowEmptyInput: true
   },

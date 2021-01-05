@@ -12,6 +12,7 @@ export default (options: Partial<Options> = {}): Options => {
   const isDev = !isProd()
 
   return {
+    ...options,
     paths: {
       cwd,
       // Source files
@@ -27,13 +28,17 @@ export default (options: Partial<Options> = {}): Options => {
       css: 'css',
       cssExtractPublicPath: '../',
       img: 'img',
-      assets: 'assets'
+      assets: 'assets',
+      ...options.paths
     },
-    definePluginData: {},
+    definePluginData: {
+      ...options.definePluginData
+    },
     performance: {
       hints: false,
       maxEntrypointSize: 512000,
-      maxAssetSize: 512000
+      maxAssetSize: 512000,
+      ...options.performance
     },
     optimization: {
       minimize: true,
@@ -44,13 +49,15 @@ export default (options: Partial<Options> = {}): Options => {
       runtimeChunk: {
         name: 'runtime'
       },
-      chunkIds: 'named'
+      chunkIds: 'named',
+      ...options.optimization
     },
     stats: isDev
       ? {
           all: false,
           colors: true,
-          errors: true
+          errors: true,
+          ...(options.stats as any)
         }
       : {
           all: false,
@@ -59,7 +66,8 @@ export default (options: Partial<Options> = {}): Options => {
           timings: true,
           assetsSort: '!size',
           assets: true,
-          excludeAssets: [/\.*\.map/]
+          excludeAssets: [/\.*\.map/],
+          ...(options.stats as any)
         },
     devServer: {
       historyApiFallback: true,
@@ -78,11 +86,13 @@ export default (options: Partial<Options> = {}): Options => {
       firewall: false,
       client: {
         host: HOST
-      }
+      },
+      ...options.devServer
     },
     babel: {
       presets: ['@babel/preset-env'],
-      plugins: ['@babel/plugin-proposal-class-properties']
+      plugins: ['@babel/plugin-proposal-class-properties'],
+      ...options.babel
     },
     postcss: {
       sourceMap: true,
@@ -95,26 +105,30 @@ export default (options: Partial<Options> = {}): Options => {
             }
           ]
         ]
-      }
+      },
+      ...options.postcss
     },
     sass: {
       sourceMap: true,
       // Prefer `dart-sass`
-      implementation: require('sass')
+      implementation: require('sass'),
+      ...options.sass
     },
     eslint: {
       extensions: ['js', 'ts', 'jsx', 'tsx'],
       files: 'src',
       baseConfig: {
         extends: ['@fbi-js']
-      }
+      },
+      ...options.eslint
     },
+    // https://github.com/webpack-contrib/stylelint-webpack-plugin#options
     stylelint: {
       files: 'src/**/*.{css,scss,tsx,jsx}',
       configFile: require.resolve('@fbi-js/stylelint-config'),
       // https://github.com/stylelint/stylelint/issues/4380#issuecomment-546302636
-      allowEmptyInput: true
-    },
-    ...options
+      allowEmptyInput: true,
+      ...options.stylelint
+    }
   }
 }
