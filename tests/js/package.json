@@ -18,7 +18,7 @@
     ]
   },
   "devDependencies": {
-    "@fbi-js/eslint-config": "^0.0.3",
+    "@fbi-js/eslint-config": "^1.0.0",
     "eslint": "^7.17.0",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"

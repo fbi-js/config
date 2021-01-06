@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-react",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Webpack config for React.js project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/webpack-config-react",
   "repository": "fbi-js/config",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
-    "@fbi-js/eslint-config-react-typescript": "^0.0.4",
-    "@fbi-js/tsconfig": "^0.0.3",
-    "@fbi-js/webpack-config-base": "^0.0.4"
+    "@fbi-js/eslint-config-react-typescript": "^1.0.0",
+    "@fbi-js/tsconfig": "^1.0.0",
+    "@fbi-js/webpack-config-base": "^1.0.0"
   },
   "devDependencies": {
     "webpack": "^5.11.1"

@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/tsconfig",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "tsconfig collection",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/tsconfig",
   "repository": "fbi-js/config",

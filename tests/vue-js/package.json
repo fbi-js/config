@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fbi-js/eslint-config-vue": "^0.0.3",
+    "@fbi-js/eslint-config-vue": "^1.0.0",
     "eslint": "^7.17.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9"

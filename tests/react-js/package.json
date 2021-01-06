@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fbi-js/eslint-config-react": "^0.0.3",
-    "@fbi-js/tsconfig": "^0.0.3",
+    "@fbi-js/eslint-config-react": "^1.0.0",
+    "@fbi-js/tsconfig": "^1.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "eslint": "^7.17.0",

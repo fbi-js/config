@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/eslint-config-vue",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "ESLint config for Vue.js project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-vue",
   "repository": "fbi-js/config",
@@ -12,7 +12,7 @@
     "index.js"
   ],
   "dependencies": {
-    "@fbi-js/eslint-config": "^0.0.3",
+    "@fbi-js/eslint-config": "^1.0.0",
     "eslint-plugin-vue": "^7.4.0"
   },
   "peerDependencies": {

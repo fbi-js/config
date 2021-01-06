@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-base",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Webpack base config",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/webpack-config-base",
   "repository": "fbi-js/config",
@@ -54,7 +54,7 @@
     "webpackbar": "^5.0.0-3"
   },
   "devDependencies": {
-    "@fbi-js/tsconfig": "^0.0.3",
+    "@fbi-js/tsconfig": "^1.0.0",
     "@types/copy-webpack-plugin": "^6.4.0",
     "@types/css-minimizer-webpack-plugin": "^1.1.1",
     "@types/mini-css-extract-plugin": "^1.2.2",
