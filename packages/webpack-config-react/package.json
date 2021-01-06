@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
-    "@fbi-js/eslint-config-react-typescript": "^0.0.2",
-    "@fbi-js/tsconfig": "^0.0.1",
-    "@fbi-js/webpack-config-base": "^0.0.2"
+    "@fbi-js/eslint-config-react-typescript": "^0.0.3",
+    "@fbi-js/tsconfig": "^0.0.2",
+    "@fbi-js/webpack-config-base": "^0.0.3"
   },
   "devDependencies": {
     "webpack": "^5.11.1"
