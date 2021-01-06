@@ -1,7 +1,9 @@
 {
   "name": "@fbi-js/webpack-config-react",
   "version": "0.0.3",
-  "description": "",
+  "description": "Webpack config for React.js project",
+  "homepage": "https://github.com/fbi-js/config/tree/master/packages/webpack-config-react",
+  "repository": "fbi-js/config",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [

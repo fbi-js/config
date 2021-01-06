@@ -1,7 +1,7 @@
 {
   "name": "@fbi-js/eslint-config-react",
   "version": "0.0.2",
-  "description": "fbi js eslint config",
+  "description": "ESLint config for React.js project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-react",
   "repository": "fbi-js/config",
   "license": "MIT",

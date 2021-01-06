@@ -1,8 +1,8 @@
 {
   "name": "@fbi-js/stylelint-config",
   "version": "0.0.2",
-  "description": "fbi js eslint config",
-  "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config",
+  "description": "StyleLint config",
+  "homepage": "https://github.com/fbi-js/config/tree/master/packages/stylelint-config",
   "repository": "fbi-js/config",
   "license": "MIT",
   "contributors": [

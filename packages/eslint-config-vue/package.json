@@ -1,7 +1,7 @@
 {
   "name": "@fbi-js/eslint-config-vue",
   "version": "0.0.2",
-  "description": "fbi js eslint config",
+  "description": "ESLint config for Vue.js project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-vue",
   "repository": "fbi-js/config",
   "license": "MIT",

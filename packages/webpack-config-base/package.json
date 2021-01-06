@@ -1,7 +1,9 @@
 {
   "name": "@fbi-js/webpack-config-base",
   "version": "0.0.3",
-  "description": "",
+  "description": "Webpack base config",
+  "homepage": "https://github.com/fbi-js/config/tree/master/packages/webpack-config-base",
+  "repository": "fbi-js/config",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
