@@ -1,25 +1,31 @@
-# fbi-config-workspace
+# Configs
 
-fbi-config-workspace description
+Config collection for [TS](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html), [ESLint](https://eslint.org/docs/user-guide/configuring#configuring-eslint), [StyleLint](https://stylelint.io/user-guide/configure), [Webpack](https://webpack.js.org/configuration/).
 
-> This project is generated via&nbsp;[fbi](https://github.com/fbi-js/fbi)&nbsp;@fbi-js/factory-node&nbsp; template monorepo
 
-## Dev
+## TS
 
-- Install Dependencies
+- [@fbi-js/tsconfig](./packages/tsconfig/README.md)
 
-  ```bash
-  yarn # or npm install
-  ```
+## ESLint
 
-- Development
+- [@fbi-js/eslint-config](./packages/eslint-config/README.md)
+- [@fbi-js/eslint-config-typescript](./packages/eslint-config-typescript/README.md)
+- [@fbi-js/eslint-config-vue](./packages/eslint-config-vue/README.md)
+- [@fbi-js/eslint-config-vue-typescript](./packages/eslint-config-vue-typescript/README.md)
+- [@fbi-js/eslint-config-react](./packages/eslint-config-react/README.md)
+- [@fbi-js/eslint-config-react-typescript](./packages/eslint-config-react-typescript/README.md)
 
-  ```bash
-  yarn dev
-  ```
+## StyleLint
 
-- Build for production
+- [@fbi-js/stylelint-config](./packages/stylelint-config/README.md)
 
-  ```bash
-  yarn build
-  ```
+
+## Webpack
+
+- [@fbi-js/webpack-config-base](./packages/webpack-config-base/README.md)
+- [@fbi-js/webpack-config-vue](./packages/webpack-config-vue/README.md)
+- [@fbi-js/webpack-config-react](./packages/webpack-config-react/README.md)
+## License
+
+Licensed under [MIT](https://opensource.org/licenses/MIT).
