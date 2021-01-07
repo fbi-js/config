@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/eslint-config-react-typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint config for React.js+Typescript project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-react-typescript",
   "repository": "fbi-js/config",
@@ -12,8 +12,8 @@
     "index.js"
   ],
   "dependencies": {
-    "@fbi-js/eslint-config-react": "^1.0.0",
-    "@fbi-js/eslint-config-typescript": "^1.0.0"
+    "@fbi-js/eslint-config-react": "^1.0.1",
+    "@fbi-js/eslint-config-typescript": "^1.0.1"
   },
   "peerDependencies": {
     "eslint": ">= 7.17.0"
