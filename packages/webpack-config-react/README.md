@@ -70,6 +70,8 @@ interface Options {
   postcss: Record<string, any>
   // https://github.com/webpack-contrib/sass-loader#options
   sass: Record<string, any>
+  // https://github.com/webpack-contrib/less-loader#options
+  less: Record<string, any>
   // https://github.com/webpack-contrib/eslint-webpack-plugin#options
   eslint: Record<string, any>
   // https://github.com/webpack-contrib/stylelint-webpack-plugin#options

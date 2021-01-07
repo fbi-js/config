@@ -2,7 +2,6 @@
 
 Config collection for [TS](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html), [ESLint](https://eslint.org/docs/user-guide/configuring#configuring-eslint), [StyleLint](https://stylelint.io/user-guide/configure), [Webpack](https://webpack.js.org/configuration/).
 
-
 ## TS
 
 - [@fbi-js/tsconfig](./packages/tsconfig/README.md)
@@ -26,6 +25,13 @@ Config collection for [TS](https://www.typescriptlang.org/docs/handbook/tsconfig
 - [@fbi-js/webpack-config-base](./packages/webpack-config-base/README.md)
 - [@fbi-js/webpack-config-vue](./packages/webpack-config-vue/README.md)
 - [@fbi-js/webpack-config-react](./packages/webpack-config-react/README.md)
+
+## Contribution
+
+Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
+
+Thank you to all the people who already contributed to @fbi-js/configs!
+
 ## License
 
 Licensed under [MIT](https://opensource.org/licenses/MIT).

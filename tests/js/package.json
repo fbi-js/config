@@ -6,7 +6,7 @@
   "private": "true",
   "scripts": {
     "lint": "npx eslint .",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "serve": "webpack serve"
   },
   "keywords": [],
@@ -14,11 +14,12 @@
   "license": "ISC",
   "eslintConfig": {
     "extends": [
-      "@fbi-js"
+      "@fbi-js/eslint-config"
     ]
   },
   "devDependencies": {
     "@fbi-js/eslint-config": "^1.0.0",
+    "@fbi-js/webpack-config-base": "^1.0.0",
     "eslint": "^7.17.0",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"

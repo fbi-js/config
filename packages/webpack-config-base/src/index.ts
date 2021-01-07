@@ -35,6 +35,38 @@ export default ({
     options.babel?.presets.push('@babel/preset-typescript')
   }
 
+  const baseCssLoaders = isDev
+    ? [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: { sourceMap: true, importLoaders: 1 }
+        },
+        {
+          loader: 'postcss-loader',
+          options: options.postcss
+        }
+      ]
+    : [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: options.paths.cssExtractPublicPath
+          }
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            sourceMap: false
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: options.postcss
+        }
+      ]
+
   const config = {
     mode: getEnvMode(),
     devtool: isDev ? 'inline-source-map' : false,
@@ -56,7 +88,6 @@ export default ({
     },
     module: {
       rules: [
-        // JavaScript: Use Babel to transpile JavaScript files
         {
           test: /\.(j|t)sx?$/,
           exclude: resolve('node_modules'),
@@ -64,6 +95,26 @@ export default ({
             loader: 'babel-loader',
             options: options.babel
           }
+        },
+        {
+          test: /\.(sc|sa|c)ss$/,
+          use: [
+            ...baseCssLoaders,
+            {
+              loader: 'sass-loader',
+              options: options.sass
+            }
+          ]
+        },
+        {
+          test: /\.less$/,
+          use: [
+            ...baseCssLoaders,
+            {
+              loader: 'less-loader',
+              options: options.less
+            }
+          ]
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -86,49 +137,6 @@ export default ({
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           type: 'asset/resource'
-        },
-        // Styles: Inject CSS into the head with source maps
-        {
-          test: /\.(sc|sa|c)ss$/,
-          use: isDev
-            ? [
-                'style-loader',
-                {
-                  loader: 'css-loader',
-                  options: { sourceMap: true, importLoaders: 1 }
-                },
-                {
-                  loader: 'postcss-loader',
-                  options: options.postcss
-                },
-                {
-                  loader: 'sass-loader',
-                  options: options.sass
-                }
-              ]
-            : [
-                {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                    publicPath: options.paths.cssExtractPublicPath
-                  }
-                },
-                {
-                  loader: 'css-loader',
-                  options: {
-                    importLoaders: 2,
-                    sourceMap: false
-                  }
-                },
-                {
-                  loader: 'postcss-loader',
-                  options: options.postcss
-                },
-                {
-                  loader: 'sass-loader',
-                  options: options.sass
-                }
-              ]
         }
       ]
     },

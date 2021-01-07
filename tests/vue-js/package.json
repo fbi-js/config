@@ -6,7 +6,7 @@
   "private": "true",
   "scripts": {
     "lint": "npx eslint src",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "serve": "webpack serve"
   },
   "keywords": [],

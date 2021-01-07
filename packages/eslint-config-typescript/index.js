@@ -15,6 +15,12 @@ module.exports = {
     // ],
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/strict-boolean-expressions': 'off'
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false
+      }
+    ]
   }
 }

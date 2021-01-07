@@ -26,7 +26,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@fbi-js/eslint-config-react-typescript": "^1.0.0",
-    "@fbi-js/tsconfig": "^1.0.0",
+    "@fbi-js/tsconfig": "^1.0.2",
     "@fbi-js/webpack-config-base": "^1.0.0"
   },
   "devDependencies": {

@@ -95,7 +95,7 @@ export default (options: Partial<Options> = {}): Options => {
       ...options.babel
     },
     postcss: {
-      sourceMap: true,
+      sourceMap: isDev,
       postcssOptions: {
         plugins: [
           [
@@ -109,10 +109,17 @@ export default (options: Partial<Options> = {}): Options => {
       ...options.postcss
     },
     sass: {
-      sourceMap: true,
+      sourceMap: isDev,
       // Prefer `dart-sass`
       implementation: require('sass'),
       ...options.sass
+    },
+    less: {
+      sourceMap: isDev,
+      lessOptions: {
+        javascriptEnabled: true
+      },
+      ...options.less
     },
     eslint: {
       extensions: ['js', 'ts', 'jsx', 'tsx'],
@@ -122,7 +129,6 @@ export default (options: Partial<Options> = {}): Options => {
       },
       ...options.eslint
     },
-    // https://github.com/webpack-contrib/stylelint-webpack-plugin#options
     stylelint: {
       files: 'src/**/*.{css,scss,tsx,jsx}',
       configFile: require.resolve('@fbi-js/stylelint-config'),
