@@ -1,6 +1,6 @@
 {
   "name": "tests-react-ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "private": "true",
@@ -13,10 +13,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fbi-js/eslint-config-react-typescript": "^1.0.1",
-    "@fbi-js/tsconfig": "^1.0.3",
-    "@fbi-js/webpack-config-base": "^1.1.0",
-    "@fbi-js/webpack-config-react": "^1.0.1",
+    "@fbi-js/eslint-config-react-typescript": "^1.1.0",
+    "@fbi-js/tsconfig": "^1.1.0",
+    "@fbi-js/webpack-config-base": "^1.2.0",
+    "@fbi-js/webpack-config-react": "^1.1.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "eslint": "^7.17.0",

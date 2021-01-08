@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.2.0
+
+### Minor Changes
+
+- make typescript rules loose
+
 ## 1.1.0
 
 ### Minor Changes

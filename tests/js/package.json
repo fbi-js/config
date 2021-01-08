@@ -1,6 +1,6 @@
 {
   "name": "tests-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "private": "true",
@@ -18,8 +18,8 @@
     ]
   },
   "devDependencies": {
-    "@fbi-js/eslint-config": "^1.0.1",
-    "@fbi-js/webpack-config-base": "^1.1.0",
+    "@fbi-js/eslint-config": "^1.1.0",
+    "@fbi-js/webpack-config-base": "^1.2.0",
     "eslint": "^7.17.0",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"

@@ -1,5 +1,11 @@
 # @fbi-js/tsconfig
 
+## 1.1.0
+
+### Minor Changes
+
+- make typescript rules loose
+
 ## 1.0.3
 
 ### Patch Changes
