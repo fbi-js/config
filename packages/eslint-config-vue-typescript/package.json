@@ -13,8 +13,7 @@
   ],
   "dependencies": {
     "@fbi-js/eslint-config-typescript": "^1.0.1",
-    "@fbi-js/eslint-config-vue": "^1.0.1",
-    "@vue/eslint-config-typescript": "^7.0.0"
+    "@fbi-js/eslint-config-vue": "^1.0.1"
   },
   "peerDependencies": {
     "eslint": ">= 7.17.0"
