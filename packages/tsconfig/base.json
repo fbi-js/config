@@ -25,7 +25,6 @@
     "sourceMap": true,
     "declaration": true,
     "strict": true,
-    "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsconfig.tsbuildinfo"
+    "incremental": false
   }
 }
