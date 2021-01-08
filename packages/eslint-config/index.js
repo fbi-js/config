@@ -1,13 +1,14 @@
 module.exports = {
+  // https://eslint.org/docs/user-guide/configuring#using-configuration-files-1
+  root: true,
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: ['standard'],
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  rules: {},
+    ecmaVersion: '2020',
+    sourceType: 'module'
+  }
 }
