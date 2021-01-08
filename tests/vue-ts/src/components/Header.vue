@@ -11,7 +11,9 @@
     },
 
     methods: {
-      demo1 () { }
+      demo1 () {
+        var a
+      }
     }
   }
 </script>

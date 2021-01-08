@@ -36,6 +36,8 @@ cd tests
 # run npm scripts
 ```
 
+See lint errors: `npx eslint --no-eslintrc -c {config path} {file path}`
+
 ## Build
 
 ```bash

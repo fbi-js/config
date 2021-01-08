@@ -4,7 +4,7 @@ import './index.scss'
 
 const a = ''
 
-function b (x: string): void {
+function b (x: string) {
   if (x !== '') {
     console.log('hw')
   }
@@ -12,7 +12,7 @@ function b (x: string): void {
 
 b(a)
 
-const c = function (a: string): string {
+const c = function (a: string) {
   return a
 }
 

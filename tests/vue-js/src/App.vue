@@ -8,6 +8,7 @@
 
     methods: {
       a () {
+        let x
       }
     }
   }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "lint": "npx eslint .",
+    "lint": "npx eslint index.js",
     "build": "NODE_ENV=production webpack",
     "serve": "webpack serve"
   },
@@ -18,8 +18,8 @@
     ]
   },
   "devDependencies": {
-    "@fbi-js/eslint-config": "^1.0.0",
-    "@fbi-js/webpack-config-base": "^1.0.0",
+    "@fbi-js/eslint-config": "^1.0.1",
+    "@fbi-js/webpack-config-base": "^1.1.0",
     "eslint": "^7.17.0",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
