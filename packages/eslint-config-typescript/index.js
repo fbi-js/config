@@ -1,26 +1,34 @@
 module.exports = {
-  extends: ['@fbi-js', 'standard-with-typescript'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: ['@fbi-js', 'plugin:@typescript-eslint/eslint-recommended'],
   parserOptions: {
     project: './tsconfig.json'
   },
-  rules: {
-    // TODO
-    // '@typescript-eslint/indent': [
-    //   'error',
-    //   2,
-    //   {
-    //     SwitchCase: 2,
-    //     ignoredNodes: ['TemplateLiteral *', 'VariableDeclaration *']
-    //   }
-    // ],
-    '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/no-misused-promises': [
-      'error',
-      {
-        checksVoidReturn: false
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts']
+      },
+      // See: https://www.npmjs.com/package/eslint-import-resolver-typescript
+      typescript: {}
+    }
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-use-before-define': 'off',
+        'import/no-duplicates': 'off'
       }
-    ]
-  }
+    },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        // The core 'no-unused-vars' rules (in the eslint:recommeded ruleset)
+        // does not work with type definitions
+        'no-unused-vars': 'off'
+      }
+    }
+  ]
 }
