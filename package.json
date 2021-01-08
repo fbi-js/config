@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "lerna run dev --scope @fbi-js/*",
     "build": "lerna run build --scope @fbi-js/*",
+    "test": "jest",
     "lint": "eslint packages/*/src/**/*.ts",
     "format": "prettier --write packages/*/src/**/*.ts",
     "clean": "lerna run --parallel clean",
@@ -18,8 +19,11 @@
   "devDependencies": {
     "@changesets/cli": "^2.12.0",
     "@fbi-js/factory-node": "^2.1.0",
+    "@types/jest": "^26.0.20",
     "eslint": "^7.17.0",
-    "rimraf": "^3.0.2"
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4"
   },
   "license": "MIT",
   "eslintConfig": {
