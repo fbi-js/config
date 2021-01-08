@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.2.1
+
+### Patch Changes
+
+- update dep @fbi-js/tsconfig
+
 ## 1.2.0
 
 ### Minor Changes

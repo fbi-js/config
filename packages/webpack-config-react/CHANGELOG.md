@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.1.1
+
+### Patch Changes
+
+- update dep @fbi-js/tsconfig
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.2.1
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @fbi-js/tsconfig
 
+## 1.1.1
+
+### Patch Changes
+
+- disable incremental
+
 ## 1.1.0
 
 ### Minor Changes
