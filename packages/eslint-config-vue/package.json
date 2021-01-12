@@ -11,6 +11,9 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "format": "prettier -cw index.js && npx eslint index.js --fix"
+  },
   "dependencies": {
     "@fbi-js/eslint-config": "^1.1.0",
     "eslint-plugin-vue": "^7.4.1"
@@ -20,5 +23,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "eslintConfig": {
+    "extends": ["../eslint-config"]
   }
 }

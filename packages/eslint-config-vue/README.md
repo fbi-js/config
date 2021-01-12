@@ -1,6 +1,9 @@
 # @fbi-js/eslint-config-vue
 
-ESLint config for Vue.js project.
+ESLint config for Vue.js project. Extends
+
+- [@fbi-js/eslint-config](https://github.com/fbi-js/config/tree/main/packages/eslint-config)
+- [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)
 
 ## Usage
 
@@ -13,9 +16,7 @@ npm i -D @fbi-js/eslint-config-vue
 ```json
 {
   "eslintConfig": {
-    "extends": [
-      "@fbi-js/vue"
-    ]
+    "extends": ["@fbi-js/vue"]
   }
 }
 ```

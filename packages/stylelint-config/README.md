@@ -1,6 +1,9 @@
 # @fbi-js/stylelint-config
 
-StyleLint config.
+StyleLint config. Extends
+
+- [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
+- [stylelint-config-prettier](https://github.com/prettier/stylelint-config-prettier)
 
 ## Usage
 
@@ -13,9 +16,7 @@ npm i -D @fbi-js/stylelint-config
 ```json
 {
   "stylelint": {
-    "extends": [
-      "@fbi-js/stylelint-config"
-    ]
+    "extends": ["@fbi-js/stylelint-config"]
   }
 }
 ```

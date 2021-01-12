@@ -2,10 +2,20 @@
 
 Webpack base config.
 
+## Features
+
+- JavaScript
+- TypeScript
+- SASS
+- LESS
+- PostCSS
+- ESLint
+- StyleLint
+
 ## Usage
 
 ```bash
-npm i -D @fbi-js/webpack-config-base
+npm i -D @fbi-js/webpack-config-base webpack@5 webpack-dev-server@next
 ```
 
 - `./webpack.config.js`
@@ -78,7 +88,6 @@ interface Options {
   stylelint: Record<string, any>
 }
 ```
-
 
 ## License
 

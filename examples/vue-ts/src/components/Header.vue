@@ -12,7 +12,7 @@
 
     methods: {
       demo1 () {
-        var a
+        // let a
       }
     }
   }

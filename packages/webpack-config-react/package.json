@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "tsc --preserveWatchOutput -w",
     "build": "npm run clean && tsc -b .",
-    "clean": "rimraf lib tsconfig.tsbuildinfo"
+    "clean": "rimraf lib tsconfig.tsbuildinfo",
+    "format": "prettier -cw src/*.ts && npx eslint src/*.ts --fix"
   },
   "keywords": [],
   "author": "fbi",
@@ -26,10 +27,13 @@
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@fbi-js/eslint-config-react-typescript": "^1.1.0",
-    "@fbi-js/tsconfig": "^1.1.0",
+    "@fbi-js/tsconfig": "^1.1.1",
     "@fbi-js/webpack-config-base": "^1.2.1"
   },
   "devDependencies": {
-    "webpack": "^5.11.1"
+    "webpack": "^5.13.0"
+  },
+  "eslintConfig": {
+    "extends": ["../eslint-config-typescript"]
   }
 }

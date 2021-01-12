@@ -1,11 +1,11 @@
 # @fbi-js/webpack-config-react
 
-Webpack config for React.js project.
+Webpack config for React.js project. Extends [@fbi-js/webpack-config-base](https://github.com/fbi-js/config/blob/main/packages/webpack-config-base)
 
 ## Usage
 
 ```bash
-npm i -D @fbi-js/webpack-config-react
+npm i -D @fbi-js/webpack-config-react webpack@5 webpack-dev-server@next
 ```
 
 - `./webpack.config.js`

@@ -31,12 +31,8 @@
 ## Test
 
 ```bash
-cd tests
-
-# run npm scripts
+yarn test
 ```
-
-See lint errors: `npx eslint --no-eslintrc -c {config path} {file path}`
 
 ## Build
 

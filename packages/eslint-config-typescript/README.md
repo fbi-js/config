@@ -1,6 +1,9 @@
 # @fbi-js/eslint-config-typescript
 
-ESLint config for Typescript project.
+ESLint config for Typescript project. Extends
+
+- [@fbi-js/eslint-config](https://github.com/fbi-js/config/tree/main/packages/eslint-config)
+- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
 
 ## Usage
 
@@ -13,9 +16,7 @@ npm i -D @fbi-js/eslint-config-typescript
 ```json
 {
   "eslintConfig": {
-    "extends": [
-      "@fbi-js/typescript"
-    ]
+    "extends": ["@fbi-js/typescript"]
   }
 }
 ```

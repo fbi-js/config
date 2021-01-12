@@ -158,7 +158,7 @@ export default ({
                 globOptions: {
                   dot: true
                 },
-                filter: resourcePath => !resourcePath.endsWith('index.html')
+                filter: (resourcePath) => !resourcePath.endsWith('index.html')
               }
             ]
           })
@@ -194,8 +194,8 @@ export default ({
       isDev
         ? new webpack.HotModuleReplacementPlugin()
         : new MiniCssExtractPlugin({
-            filename: `${options.paths.css}/[name].[contenthash].css`
-          })
+          filename: `${options.paths.css}/[name].[contenthash].css`
+        })
     ].filter(Boolean),
     resolve: {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.mjs', '.wasm', '.json'],

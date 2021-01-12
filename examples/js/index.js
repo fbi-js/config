@@ -12,4 +12,4 @@ function b (x) {
 
 b(a)
 
-var x
+let x

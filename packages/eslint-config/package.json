@@ -5,12 +5,11 @@
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config",
   "repository": "fbi-js/config",
   "license": "MIT",
-  "contributors": [
-    "neikvon <neikvon@hotmail.com>"
-  ],
-  "files": [
-    "index.js"
-  ],
+  "contributors": ["neikvon <neikvon@hotmail.com>"],
+  "files": ["index.js"],
+  "scripts": {
+    "format": "prettier -cw index.js && npx eslint index.js --fix"
+  },
   "dependencies": {
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -22,5 +21,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "eslintConfig": {
+    "extends": ["."]
   }
 }

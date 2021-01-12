@@ -1,6 +1,8 @@
 const a = ''
 
-function b (x) {
+// space-before-function-paren
+
+function b    (x) {
   if (x) {
     console.log('hw')
   }
@@ -8,8 +10,42 @@ function b (x) {
 
 b(a)
 
-var x
+function foo() {
+  // ...
+}
 
-function c () {}
+foo()
 
-c()
+const bar = function () {
+  // ...
+}
+
+bar()
+
+class Foo {
+  constructor() {
+    // ...
+      this.a = ""
+  }
+}
+
+const f = new Foo()
+console.log(f.a)
+
+const foo2 = {
+  bar() {
+    // ...
+  }
+}
+
+foo2();
+
+const foo3 = async (a) => await a
+
+foo3();
+
+// array-bracket-spacing
+const arr = [ ['foo'], 'bar']
+
+
+console.log(arr);

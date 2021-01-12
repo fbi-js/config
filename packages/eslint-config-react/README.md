@@ -1,6 +1,10 @@
 # @fbi-js/eslint-config-react
 
-ESLint config for React.js project.
+ESLint config for React.js project. Extends
+
+- [@fbi-js/eslint-config](https://github.com/fbi-js/config/tree/main/packages/eslint-config)
+- [eslint-config-standard-jsx](https://github.com/standard/eslint-config-standard-jsx)
+- [eslint-config-standard-react](https://github.com/standard/eslint-config-standard-react)
 
 ## Usage
 

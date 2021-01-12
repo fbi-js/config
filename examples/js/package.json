@@ -5,9 +5,9 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "lint": "npx eslint index.js",
+    "serve": "webpack serve",
     "build": "NODE_ENV=production webpack",
-    "serve": "webpack serve"
+    "format": "prettier -cw ./*.{js,css,less,scss} && npx eslint ./*.js --fix"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@fbi-js/eslint-config": "^1.1.0",
-    "@fbi-js/webpack-config-base": "^1.2.0",
+    "@fbi-js/webpack-config-base": "^1.2.1",
     "eslint": "^7.17.0",
-    "webpack": "^5.11.1",
+    "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1"
   }
 }

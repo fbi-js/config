@@ -19,9 +19,7 @@
     "vue-router": "^3.4.9"
   },
   "eslintConfig": {
-    "extends": [
-      "@fbi-js/vue"
-    ]
+    "extends": ["@fbi-js/vue"]
   },
   "prettier": {
     "semi": false,

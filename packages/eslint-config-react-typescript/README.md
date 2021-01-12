@@ -1,6 +1,9 @@
 # @fbi-js/eslint-config-react-typescript
 
-ESLint config for React.js+Typescript project.
+ESLint config for React.js+Typescript project. Extends
+
+- [@fbi-js/eslint-config-react](https://github.com/fbi-js/config/tree/main/packages/eslint-config-react)
+- [@fbi-js/eslint-config-typescript](https://github.com/fbi-js/config/tree/main/packages/eslint-config-typescript)
 
 ## Usage
 

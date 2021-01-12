@@ -1,11 +1,11 @@
 # @fbi-js/webpack-config-vue
 
-Webpack config for Vue.js project.
+Webpack config for Vue.js project. Extends [@fbi-js/webpack-config-base](https://github.com/fbi-js/config/blob/main/packages/webpack-config-base)
 
 ## Usage
 
 ```bash
-npm i -D @fbi-js/webpack-config-vue
+npm i -D @fbi-js/webpack-config-vue webpack@5 webpack-dev-server@next
 ```
 
 - `./webpack.config.js`
@@ -78,7 +78,6 @@ interface Options {
   stylelint: Record<string, any>
 }
 ```
-
 
 ## License
 

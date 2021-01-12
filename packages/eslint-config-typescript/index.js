@@ -8,11 +8,12 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts', '.json']
       },
       // See: https://www.npmjs.com/package/eslint-import-resolver-typescript
       typescript: {}
-    }
+    },
+    'import/extensions': ['.js', '.ts', '.mjs']
   },
   overrides: [
     {
