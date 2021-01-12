@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-vue
 
+## 1.2.1
+
+### Patch Changes
+
+- add babel-plugin-import to webpack-config-base
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.4.0
+
 ## 1.2.0
 
 ### Minor Changes
