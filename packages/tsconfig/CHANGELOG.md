@@ -1,5 +1,11 @@
 # @fbi-js/tsconfig
 
+## 1.2.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
 ## 1.1.1
 
 ### Patch Changes

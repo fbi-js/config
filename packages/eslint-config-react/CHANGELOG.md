@@ -1,5 +1,16 @@
 # @fbi-js/eslint-config-react
 
+## 1.2.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes

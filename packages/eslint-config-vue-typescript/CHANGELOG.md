@@ -1,5 +1,17 @@
 # @fbi-js/eslint-config-vue-typescript
 
+## 1.2.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config-typescript@1.2.0
+  - @fbi-js/eslint-config-vue@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @fbi-js/webpack-config-vue
 
+## 1.2.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config-vue-typescript@1.2.0
+  - @fbi-js/stylelint-config@1.2.0
+  - @fbi-js/tsconfig@1.2.0
+  - @fbi-js/webpack-config-base@1.3.0
+
 ## 1.1.1
 
 ### Patch Changes

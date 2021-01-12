@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.3.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
 ## 1.2.1
 
 ### Patch Changes

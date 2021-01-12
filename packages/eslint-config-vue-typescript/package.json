@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/eslint-config-vue-typescript",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "ESLint config for Vue.js+Typescript project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-vue-typescript",
   "repository": "fbi-js/config",
@@ -15,8 +15,8 @@
     "format": "prettier -cw index.js && npx eslint index.js --fix"
   },
   "dependencies": {
-    "@fbi-js/eslint-config-typescript": "^1.1.0",
-    "@fbi-js/eslint-config-vue": "^1.1.0"
+    "@fbi-js/eslint-config-typescript": "^1.2.0",
+    "@fbi-js/eslint-config-vue": "^1.2.0"
   },
   "peerDependencies": {
     "eslint": ">= 7.17.0"
@@ -25,6 +25,8 @@
     "access": "public"
   },
   "eslintConfig": {
-    "extends": ["../eslint-config"]
+    "extends": [
+      "../eslint-config"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/eslint-config-react",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "ESLint config for React.js project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-react",
   "repository": "fbi-js/config",
@@ -15,7 +15,7 @@
     "format": "prettier -cw index.js && npx eslint index.js --fix"
   },
   "dependencies": {
-    "@fbi-js/eslint-config": "^1.1.0",
+    "@fbi-js/eslint-config": "^1.2.0",
     "eslint-config-standard-jsx": "^10.0.0",
     "eslint-config-standard-react": "^11.0.1",
     "eslint-plugin-react": "^7.22.0"
@@ -27,6 +27,8 @@
     "access": "public"
   },
   "eslintConfig": {
-    "extends": ["../eslint-config"]
+    "extends": [
+      "../eslint-config"
+    ]
   }
 }

@@ -1,5 +1,11 @@
 # @fbi-js/stylelint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- prettier conflicts with eslint standard config
+
 ## 1.1.0
 
 ### Minor Changes

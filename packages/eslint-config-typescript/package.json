@@ -1,17 +1,21 @@
 {
   "name": "@fbi-js/eslint-config-typescript",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "ESLint config for Typescript project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-typescript",
   "repository": "fbi-js/config",
   "license": "MIT",
-  "contributors": ["neikvon <neikvon@hotmail.com>"],
-  "files": ["index.js"],
+  "contributors": [
+    "neikvon <neikvon@hotmail.com>"
+  ],
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "format": "prettier -cw index.js && npx eslint index.js --fix"
   },
   "dependencies": {
-    "@fbi-js/eslint-config": "^1.1.0",
+    "@fbi-js/eslint-config": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint-import-resolver-typescript": "^2.3.0"
@@ -24,6 +28,8 @@
     "access": "public"
   },
   "eslintConfig": {
-    "extends": ["../eslint-config"]
+    "extends": [
+      "../eslint-config"
+    ]
   }
 }
