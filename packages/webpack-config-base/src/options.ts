@@ -130,7 +130,7 @@ export default (options: Partial<Options> = {}): Options => {
       ...options.eslint
     },
     stylelint: {
-      files: 'src/**/*.{css,scss,tsx,jsx}',
+      files: 'src/**/*.{css,scss}',
       configFile: require.resolve('@fbi-js/stylelint-config'),
       // https://github.com/stylelint/stylelint/issues/4380#issuecomment-546302636
       allowEmptyInput: true,
