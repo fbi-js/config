@@ -1,7 +1,11 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['@fbi-js', 'plugin:@typescript-eslint/eslint-recommended'],
+  extends: [
+    '@fbi-js',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'prettier/@typescript-eslint'
+  ],
   parserOptions: {
     project: './tsconfig.json'
   },

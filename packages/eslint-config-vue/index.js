@@ -1,7 +1,8 @@
 module.exports = {
   extends: [
     '@fbi-js',
-    'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
+    'plugin:vue/recommended', // Use this if you are using Vue.js 2.x.
+    'prettier/vue'
   ],
   rules: {
     'vue/script-indent': ['error', 2, { baseIndent: 1 }]
