@@ -35,37 +35,37 @@ export default ({
     options.babel?.presets.push('@babel/preset-typescript')
   }
 
-  const baseCssLoaders = isDev
-    ? [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: { sourceMap: true, importLoaders: 1 }
-        },
-        {
-          loader: 'postcss-loader',
-          options: options.postcss
-        }
-      ]
-    : [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: options.paths.cssExtractPublicPath
-          }
-        },
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2,
-            sourceMap: false
-          }
-        },
-        {
-          loader: 'postcss-loader',
-          options: options.postcss
-        }
-      ]
+  const cssLoaderOptions = {
+    sourceMap: true,
+    importLoaders: 2,
+    modules: {
+      localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64]',
+      exportLocalsConvention: 'camelCaseOnly',
+      auto: true
+    }
+  }
+
+  const baseCssLoaders: any[] = [
+    {
+      loader: 'css-loader',
+      options: cssLoaderOptions
+    },
+    {
+      loader: 'postcss-loader',
+      options: options.postcss
+    }
+  ]
+
+  if (isDev) {
+    baseCssLoaders.unshift('style-loader', '@opd/css-modules-typings-loader')
+  } else {
+    baseCssLoaders.unshift({
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        publicPath: options.paths.cssExtractPublicPath
+      }
+    })
+  }
 
   const config = {
     mode: getEnvMode(),
