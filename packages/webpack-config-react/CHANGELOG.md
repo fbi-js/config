@@ -1,5 +1,16 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.0
+
+### Minor Changes
+
+- optimize webpack config
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.5.0
+
 ## 1.2.1
 
 ### Patch Changes

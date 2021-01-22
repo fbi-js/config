@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.0
+
+### Minor Changes
+
+- optimize webpack config
+
 ## 1.4.0
 
 ### Minor Changes
