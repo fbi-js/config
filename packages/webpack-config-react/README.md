@@ -76,6 +76,8 @@ interface Options {
   eslint: Record<string, any>
   // https://github.com/webpack-contrib/stylelint-webpack-plugin#options
   stylelint: Record<string, any>
+  // https://github.com/survivejs/webpack-merge#mergewithrules
+  mergeRules: MergeRules
 }
 ```
 

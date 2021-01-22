@@ -1,4 +1,5 @@
 import { Configuration } from 'webpack'
+import { CustomizeRule } from 'webpack-merge'
 
 export interface PathsConfig {
   cwd: string
@@ -10,6 +11,10 @@ export interface PathsConfig {
   cssExtractPublicPath: string
   img: string
   assets: string
+}
+
+declare type MergeRules = {
+  [s: string]: CustomizeRule | MergeRules
 }
 
 export interface Options {
@@ -33,6 +38,8 @@ export interface Options {
   eslint: Record<string, any>
   // https://github.com/webpack-contrib/stylelint-webpack-plugin#options
   stylelint: Record<string, any>
+  // https://github.com/survivejs/webpack-merge#mergewithrules
+  mergeRules: MergeRules
 }
 
 export interface ConfigFunctionParams {

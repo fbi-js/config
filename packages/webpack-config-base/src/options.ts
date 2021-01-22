@@ -1,4 +1,5 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import { CustomizeRule } from 'webpack-merge'
 
 import { resolve } from 'path'
 import { Options } from './types'
@@ -8,48 +9,135 @@ const cwd = process.cwd()
 const PORT = 9000
 const HOST = '0.0.0.0'
 
-export default (options: Partial<Options> = {}): Options => {
+export const defaults = {
+  paths: {
+    cwd,
+    // Source files
+    src: resolve(cwd, 'src'),
+
+    // Production build files
+    dist: resolve(cwd, 'dist'),
+
+    // Static files that get copied to build folder
+    public: resolve(cwd, 'public'),
+
+    js: 'js',
+    css: 'css',
+    cssExtractPublicPath: '../',
+    img: 'img',
+    assets: 'assets'
+  },
+  performance: {
+    hints: false as any,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
+  optimization: {
+    minimize: true,
+    minimizer: ['...', new CssMinimizerPlugin()] as any,
+    // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
+    // instead of having their own. This also helps with long-term caching, since the chunks will only
+    // change when actual code changes, not the webpack runtime.
+    runtimeChunk: {
+      name: 'runtime'
+    },
+    chunkIds: 'named' as any
+  },
+  devServer: {
+    historyApiFallback: true,
+    compress: true,
+    open: false,
+    overlay: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': '*'
+    },
+    // host: HOST,
+    port: PORT,
+    // https://github.com/webpack/webpack-dev-server/releases/tag/v4.0.0-beta.0
+    // static: [paths.public],
+    firewall: false,
+    client: {
+      host: HOST
+    }
+  },
+  babel: {
+    presets: ['@babel/preset-env'],
+    plugins: ['@babel/plugin-proposal-class-properties']
+  },
+  postcss: {
+    postcssOptions: {
+      plugins: [
+        [
+          'postcss-preset-env',
+          {
+            // Options
+          }
+        ]
+      ]
+    }
+  },
+  sass: {
+    // Prefer `dart-sass`
+    implementation: require('sass')
+  },
+  less: {
+    lessOptions: {
+      javascriptEnabled: true
+    }
+  },
+  eslint: {
+    extensions: ['js', 'ts', 'jsx', 'tsx'],
+    files: 'src',
+    baseConfig: {
+      extends: ['@fbi-js']
+    }
+  },
+  stylelint: {
+    files: 'src/**/*.{css,scss,less}',
+    configFile: require.resolve('@fbi-js/stylelint-config'),
+    // https://github.com/stylelint/stylelint/issues/4380#issuecomment-546302636
+    allowEmptyInput: true
+  },
+  mergeRules: {
+    resolve: {
+      extensions: CustomizeRule.Prepend
+    },
+    module: {
+      rules: {
+        test: CustomizeRule.Match,
+        use: {
+          loader: CustomizeRule.Match,
+          options: CustomizeRule.Replace
+        },
+        loaders: {
+          loader: CustomizeRule.Match,
+          options: CustomizeRule.Replace
+        }
+      }
+    }
+  }
+}
+
+export const resolveOptions = (options: Partial<Options> = {}): Options => {
   const isDev = !isProd()
 
   return {
     ...options,
     paths: {
-      cwd,
-      // Source files
-      src: resolve(cwd, 'src'),
-
-      // Production build files
-      dist: resolve(cwd, 'dist'),
-
-      // Static files that get copied to build folder
-      public: resolve(cwd, 'public'),
-
-      js: 'js',
-      css: 'css',
-      cssExtractPublicPath: '../',
-      img: 'img',
-      assets: 'assets',
+      ...defaults.paths,
       ...options.paths
     },
     definePluginData: {
       ...options.definePluginData
     },
     performance: {
-      hints: false,
-      maxEntrypointSize: 512000,
-      maxAssetSize: 512000,
+      ...defaults.performance,
       ...options.performance
     },
     optimization: {
-      minimize: true,
-      minimizer: ['...', new CssMinimizerPlugin()],
-      // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
-      // instead of having their own. This also helps with long-term caching, since the chunks will only
-      // change when actual code changes, not the webpack runtime.
-      runtimeChunk: {
-        name: 'runtime'
-      },
-      chunkIds: 'named',
+      ...defaults.optimization,
       ...options.optimization
     },
     stats: isDev
@@ -70,71 +158,39 @@ export default (options: Partial<Options> = {}): Options => {
           ...(options.stats as any)
         },
     devServer: {
-      historyApiFallback: true,
-      compress: true,
-      open: false,
-      overlay: true,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'Access-Control-Allow-Methods': '*'
-      },
-      // host: HOST,
-      port: PORT,
-      // https://github.com/webpack/webpack-dev-server/releases/tag/v4.0.0-beta.0
-      // static: [paths.public],
-      firewall: false,
-      client: {
-        host: HOST
-      },
+      ...defaults.devServer,
       ...options.devServer
     },
     babel: {
-      presets: ['@babel/preset-env'],
-      plugins: ['@babel/plugin-proposal-class-properties'],
+      ...defaults.babel,
       ...options.babel
     },
     postcss: {
+      ...defaults.postcss,
       sourceMap: isDev,
-      postcssOptions: {
-        plugins: [
-          [
-            'postcss-preset-env',
-            {
-              // Options
-            }
-          ]
-        ]
-      },
       ...options.postcss
     },
     sass: {
+      ...defaults.sass,
       sourceMap: isDev,
-      // Prefer `dart-sass`
-      implementation: require('sass'),
       ...options.sass
     },
     less: {
+      ...defaults.less,
       sourceMap: isDev,
-      lessOptions: {
-        javascriptEnabled: true
-      },
       ...options.less
     },
     eslint: {
-      extensions: ['js', 'ts', 'jsx', 'tsx'],
-      files: 'src',
-      baseConfig: {
-        extends: ['@fbi-js']
-      },
+      ...defaults.eslint,
       ...options.eslint
     },
     stylelint: {
-      files: 'src/**/*.{css,scss,less}',
-      configFile: require.resolve('@fbi-js/stylelint-config'),
-      // https://github.com/stylelint/stylelint/issues/4380#issuecomment-546302636
-      allowEmptyInput: true,
+      ...defaults.stylelint,
       ...options.stylelint
+    },
+    mergeRules: {
+      ...defaults.mergeRules,
+      ...options.mergeRules
     }
   }
 }

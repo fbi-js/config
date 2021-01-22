@@ -1,42 +1,48 @@
 import { Configuration } from 'webpack'
 import webpackConfigBase, {
-  merge,
+  webpackMerge,
+  resolveOptions,
   ConfigFunctionParams
 } from '@fbi-js/webpack-config-base'
 
 import { resolve } from 'path'
 import { VueLoaderPlugin } from 'vue-loader'
-import resolveOptions from './options'
+import getOptions from './options'
 
 export default ({
   webpackConfig,
-  options
+  options: userOptions
 }: ConfigFunctionParams = {}): Configuration => {
-  const baseConfig = webpackConfigBase({
-    options: resolveOptions(options)
-  })
+  const vueOptions = getOptions(userOptions)
+  const options = resolveOptions(vueOptions)
 
-  const config = {
-    module: {
-      rules: [
-        {
-          test: /\.vue$/,
-          exclude: resolve('node_modules'),
-          loader: 'vue-loader',
-          options: {
-            shadowMode: true
+  const config = webpackMerge.mergeWithRules(options.mergeRules)(
+    {
+      module: {
+        rules: [
+          {
+            test: /\.vue$/,
+            exclude: resolve('node_modules'),
+            loader: 'vue-loader',
+            options: {
+              shadowMode: true
+            }
           }
+        ]
+      },
+      plugins: [new VueLoaderPlugin()],
+      resolve: {
+        extensions: ['.vue'],
+        alias: {
+          vue: 'vue/dist/vue.esm.js'
         }
-      ]
-    },
-    plugins: [new VueLoaderPlugin()],
-    resolve: {
-      extensions: ['.vue'],
-      alias: {
-        vue: 'vue/dist/vue.esm.js'
       }
-    }
-  }
+    },
+    webpackConfig ?? {}
+  )
 
-  return merge(baseConfig, webpackConfig ?? {}, config as any)
+  return webpackConfigBase({
+    options,
+    webpackConfig: config
+  })
 }

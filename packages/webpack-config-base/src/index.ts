@@ -4,7 +4,7 @@ import fs from 'fs'
 import { join, resolve } from 'path'
 import webpack, { Configuration } from 'webpack'
 import WebpackBar from 'webpackbar'
-import { merge } from 'webpack-merge'
+import * as webpackMerge from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
@@ -14,12 +14,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 import { isProd, getEnvMode } from './utils'
-import resolveOptions from './options'
+import { defaults as defaultOptions, resolveOptions } from './options'
 
 export * from './types'
 export * from './utils'
 
-export * from 'webpack-merge'
+export { webpackMerge, resolveOptions, defaultOptions }
 
 export default ({
   options: userOptions,
@@ -242,5 +242,8 @@ export default ({
     )
   }
 
-  return merge(config, (webpackConfig as any) || {})
+  return webpackMerge.mergeWithRules(options.mergeRules)(
+    config,
+    webpackConfig ?? {}
+  )
 }

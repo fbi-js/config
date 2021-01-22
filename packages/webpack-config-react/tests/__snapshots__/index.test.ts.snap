@@ -1,0 +1,898 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`webpack config react basic 1`] = `
+Object {
+  "cache": Object {
+    "type": "filesystem",
+  },
+  "devServer": Object {
+    "client": Object {
+      "host": "0.0.0.0",
+    },
+    "compress": true,
+    "firewall": false,
+    "headers": Object {
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Origin": "*",
+    },
+    "historyApiFallback": true,
+    "open": false,
+    "overlay": true,
+    "port": 9000,
+  },
+  "devtool": "inline-source-map",
+  "entry": Object {
+    "main": "<PROJECT_ROOT>/src/main.js",
+  },
+  "mode": "production",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": "<PROJECT_ROOT>/node_modules",
+        "test": /\\\\\\.\\(j\\|t\\)sx\\?\\$/,
+        "use": Object {
+          "loader": "babel-loader",
+          "options": Object {
+            "plugins": Array [
+              "@babel/plugin-proposal-class-properties",
+            ],
+            "presets": Array [
+              "@babel/preset-env",
+              Array [
+                "@babel/preset-react",
+                Object {
+                  "runtime": "automatic",
+                },
+              ],
+            ],
+          },
+        },
+      },
+      Object {
+        "test": /\\\\\\.\\(sc\\|sa\\|c\\)ss\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "implementation": Object {
+                "FALSE": SassBoolean {
+                  "value": false,
+                },
+                "NULL": SassNull {
+                  "toString": [Function],
+                },
+                "TRUE": SassBoolean {
+                  "value": true,
+                },
+                "cli_pkg_main_0_": [Function],
+                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+dart2js	2.10.4	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.less\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "less-loader",
+            "options": Object {
+              "lessOptions": Object {
+                "javascriptEnabled": true,
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "generator": Object {
+          "filename": "[name][ext][query]",
+        },
+        "parser": Object {
+          "dataUrlCondition": Object {
+            "maxSize": 4096,
+          },
+        },
+        "test": /\\\\\\.\\(png\\|jpe\\?g\\|gif\\|svg\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset",
+      },
+      Object {
+        "test": /\\\\\\.\\(mp4\\|webm\\|ogg\\|mp3\\|wav\\|flac\\|aac\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+      Object {
+        "test": /\\\\\\.\\(woff2\\?\\|eot\\|ttf\\|otf\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+    ],
+  },
+  "output": Object {
+    "assetModuleFilename": "[name][ext][query]",
+    "filename": "[name].js?v=[fullhash]",
+    "path": "<PROJECT_ROOT>/dist",
+    "publicPath": "/",
+  },
+  "plugins": Array [
+    WebpackBarPlugin {
+      "dependenciesCount": 10000,
+      "handler": [Function],
+      "modulesCount": 5000,
+      "options": Object {
+        "color": "#0052D9",
+        "name": "project",
+        "reporter": null,
+        "reporters": Array [
+          "basic",
+        ],
+      },
+      "percentBy": undefined,
+      "profile": false,
+      "reporters": Array [
+        SimpleReporter {},
+      ],
+      "showActiveModules": true,
+      "showDependencies": true,
+      "showEntries": true,
+      "showModules": true,
+    },
+    DefinePlugin {
+      "definitions": Object {},
+    },
+    CleanWebpackPlugin {
+      "apply": [Function],
+      "cleanAfterEveryBuildPatterns": Array [],
+      "cleanOnceBeforeBuildPatterns": Array [
+        "**/*",
+      ],
+      "cleanStaleWebpackAssets": true,
+      "currentAssets": Array [],
+      "dangerouslyAllowCleanPatternsOutsideProject": false,
+      "dry": false,
+      "handleDone": [Function],
+      "handleInitial": [Function],
+      "initialClean": false,
+      "outputPath": "",
+      "protectWebpackAssets": true,
+      "removeFiles": [Function],
+      "verbose": false,
+    },
+    ESLintWebpackPlugin {
+      "options": Object {
+        "baseConfig": Object {
+          "extends": Array [
+            "@fbi-js/react",
+          ],
+        },
+        "extensions": Array [
+          "js",
+          "ts",
+          "jsx",
+          "tsx",
+        ],
+        "files": "src",
+      },
+      "run": [Function],
+    },
+    StylelintWebpackPlugin {
+      "options": Object {
+        "allowEmptyInput": true,
+        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
+        "files": "src/**/*.{css,scss,less}",
+        "formatter": [Function],
+        "stylelintPath": "stylelint",
+      },
+    },
+    HotModuleReplacementPlugin {
+      "options": Object {},
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@": "<PROJECT_ROOT>/src",
+    },
+    "extensions": Array [
+      ".js",
+      ".ts",
+      ".jsx",
+      ".tsx",
+      ".mjs",
+      ".wasm",
+      ".json",
+    ],
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "resolveLoader": Object {
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "stats": Object {
+    "all": false,
+    "colors": true,
+    "errors": true,
+  },
+}
+`;
+
+exports[`webpack config react with custom config 1`] = `
+Object {
+  "cache": Object {
+    "type": "filesystem",
+  },
+  "devServer": Object {
+    "client": Object {
+      "host": "0.0.0.0",
+    },
+    "compress": true,
+    "firewall": false,
+    "headers": Object {
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Origin": "*",
+    },
+    "historyApiFallback": true,
+    "open": false,
+    "overlay": true,
+    "port": 9000,
+  },
+  "devtool": "inline-source-map",
+  "entry": Object {
+    "main": "<PROJECT_ROOT>/src/main.js",
+  },
+  "mode": "none",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": "<PROJECT_ROOT>/node_modules",
+        "test": /\\\\\\.\\(j\\|t\\)sx\\?\\$/,
+        "use": Object {
+          "loader": "babel-loader",
+          "options": Object {
+            "plugins": Array [
+              "@babel/plugin-proposal-class-properties",
+            ],
+            "presets": Array [
+              "@babel/preset-env",
+              Array [
+                "@babel/preset-react",
+                Object {
+                  "runtime": "automatic",
+                },
+              ],
+            ],
+          },
+        },
+      },
+      Object {
+        "test": /\\\\\\.\\(sc\\|sa\\|c\\)ss\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "implementation": Object {
+                "FALSE": SassBoolean {
+                  "value": false,
+                },
+                "NULL": SassNull {
+                  "toString": [Function],
+                },
+                "TRUE": SassBoolean {
+                  "value": true,
+                },
+                "cli_pkg_main_0_": [Function],
+                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+dart2js	2.10.4	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.less\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "less-loader",
+            "options": Object {
+              "lessOptions": Object {
+                "javascriptEnabled": true,
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "generator": Object {
+          "filename": "[name][ext][query]",
+        },
+        "parser": Object {
+          "dataUrlCondition": Object {
+            "maxSize": 4096,
+          },
+        },
+        "test": /\\\\\\.\\(png\\|jpe\\?g\\|gif\\|svg\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset",
+      },
+      Object {
+        "test": /\\\\\\.\\(mp4\\|webm\\|ogg\\|mp3\\|wav\\|flac\\|aac\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+      Object {
+        "test": /\\\\\\.\\(woff2\\?\\|eot\\|ttf\\|otf\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+      Object {
+        "parser": Object {
+          "dataUrlCondition": Object {
+            "maxSize": 102400,
+          },
+        },
+        "test": /\\\\\\.svg\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset",
+      },
+    ],
+  },
+  "output": Object {
+    "assetModuleFilename": "[name][ext][query]",
+    "filename": "[name].js?v=[fullhash]",
+    "path": "<PROJECT_ROOT>/dist",
+    "publicPath": "/",
+  },
+  "plugins": Array [
+    WebpackBarPlugin {
+      "dependenciesCount": 10000,
+      "handler": [Function],
+      "modulesCount": 5000,
+      "options": Object {
+        "color": "#0052D9",
+        "name": "project",
+        "reporter": null,
+        "reporters": Array [
+          "basic",
+        ],
+      },
+      "percentBy": undefined,
+      "profile": false,
+      "reporters": Array [
+        SimpleReporter {},
+      ],
+      "showActiveModules": true,
+      "showDependencies": true,
+      "showEntries": true,
+      "showModules": true,
+    },
+    DefinePlugin {
+      "definitions": Object {},
+    },
+    CleanWebpackPlugin {
+      "apply": [Function],
+      "cleanAfterEveryBuildPatterns": Array [],
+      "cleanOnceBeforeBuildPatterns": Array [
+        "**/*",
+      ],
+      "cleanStaleWebpackAssets": true,
+      "currentAssets": Array [],
+      "dangerouslyAllowCleanPatternsOutsideProject": false,
+      "dry": false,
+      "handleDone": [Function],
+      "handleInitial": [Function],
+      "initialClean": false,
+      "outputPath": "",
+      "protectWebpackAssets": true,
+      "removeFiles": [Function],
+      "verbose": false,
+    },
+    ESLintWebpackPlugin {
+      "options": Object {
+        "baseConfig": Object {
+          "extends": Array [
+            "@fbi-js/react",
+          ],
+        },
+        "extensions": Array [
+          "js",
+          "ts",
+          "jsx",
+          "tsx",
+        ],
+        "files": "src",
+      },
+      "run": [Function],
+    },
+    StylelintWebpackPlugin {
+      "options": Object {
+        "allowEmptyInput": true,
+        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
+        "files": "src/**/*.{css,scss,less}",
+        "formatter": [Function],
+        "stylelintPath": "stylelint",
+      },
+    },
+    HotModuleReplacementPlugin {
+      "options": Object {},
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@": "<PROJECT_ROOT>/src",
+    },
+    "extensions": Array [
+      ".js",
+      ".ts",
+      ".jsx",
+      ".tsx",
+      ".mjs",
+      ".wasm",
+      ".json",
+    ],
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "resolveLoader": Object {
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "stats": Object {
+    "all": false,
+    "colors": true,
+    "errors": true,
+  },
+}
+`;
+
+exports[`webpack config react with options 1`] = `
+Object {
+  "cache": Object {
+    "type": "filesystem",
+  },
+  "devServer": Object {
+    "client": Object {
+      "host": "0.0.0.0",
+    },
+    "compress": true,
+    "firewall": false,
+    "headers": Object {
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Origin": "*",
+    },
+    "historyApiFallback": true,
+    "open": false,
+    "overlay": true,
+    "port": 9000,
+  },
+  "devtool": "inline-source-map",
+  "entry": Object {
+    "main": "<PROJECT_ROOT>/src/main.ts",
+  },
+  "mode": "production",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": "<PROJECT_ROOT>/node_modules",
+        "test": /\\\\\\.\\(j\\|t\\)sx\\?\\$/,
+        "use": Object {
+          "loader": "babel-loader",
+          "options": Object {
+            "plugins": Array [
+              "@babel/plugin-proposal-class-properties",
+            ],
+            "presets": Array [
+              "@babel/preset-env",
+              Array [
+                "@babel/preset-react",
+                Object {
+                  "runtime": "automatic",
+                },
+              ],
+              "@babel/preset-typescript",
+            ],
+          },
+        },
+      },
+      Object {
+        "test": /\\\\\\.\\(sc\\|sa\\|c\\)ss\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "implementation": Object {
+                "FALSE": SassBoolean {
+                  "value": false,
+                },
+                "NULL": SassNull {
+                  "toString": [Function],
+                },
+                "TRUE": SassBoolean {
+                  "value": true,
+                },
+                "cli_pkg_main_0_": [Function],
+                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+dart2js	2.10.4	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.less\\$/,
+        "use": Array [
+          "style-loader",
+          "@opd/css-modules-typings-loader",
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "modules": Object {
+                "auto": true,
+                "exportLocalsConvention": "camelCaseOnly",
+                "localIdentName": "[path][name]__[local]",
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "postcssOptions": Object {
+                "plugins": Array [
+                  Array [
+                    "postcss-preset-env",
+                    Object {},
+                  ],
+                ],
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "less-loader",
+            "options": Object {
+              "lessOptions": Object {
+                "javascriptEnabled": true,
+              },
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "generator": Object {
+          "filename": "[name][ext][query]",
+        },
+        "parser": Object {
+          "dataUrlCondition": Object {
+            "maxSize": 4096,
+          },
+        },
+        "test": /\\\\\\.\\(png\\|jpe\\?g\\|gif\\|svg\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset",
+      },
+      Object {
+        "test": /\\\\\\.\\(mp4\\|webm\\|ogg\\|mp3\\|wav\\|flac\\|aac\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+      Object {
+        "test": /\\\\\\.\\(woff2\\?\\|eot\\|ttf\\|otf\\)\\(\\\\\\?\\.\\*\\)\\?\\$/,
+        "type": "asset/resource",
+      },
+    ],
+  },
+  "output": Object {
+    "assetModuleFilename": "[name][ext][query]",
+    "filename": "[name].js?v=[fullhash]",
+    "path": "<PROJECT_ROOT>/dist",
+    "publicPath": "/",
+  },
+  "plugins": Array [
+    WebpackBarPlugin {
+      "dependenciesCount": 10000,
+      "handler": [Function],
+      "modulesCount": 5000,
+      "options": Object {
+        "color": "#0052D9",
+        "name": "project",
+        "reporter": null,
+        "reporters": Array [
+          "basic",
+        ],
+      },
+      "percentBy": undefined,
+      "profile": false,
+      "reporters": Array [
+        SimpleReporter {},
+      ],
+      "showActiveModules": true,
+      "showDependencies": true,
+      "showEntries": true,
+      "showModules": true,
+    },
+    DefinePlugin {
+      "definitions": Object {},
+    },
+    CleanWebpackPlugin {
+      "apply": [Function],
+      "cleanAfterEveryBuildPatterns": Array [],
+      "cleanOnceBeforeBuildPatterns": Array [
+        "**/*",
+      ],
+      "cleanStaleWebpackAssets": true,
+      "currentAssets": Array [],
+      "dangerouslyAllowCleanPatternsOutsideProject": false,
+      "dry": false,
+      "handleDone": [Function],
+      "handleInitial": [Function],
+      "initialClean": false,
+      "outputPath": "",
+      "protectWebpackAssets": true,
+      "removeFiles": [Function],
+      "verbose": false,
+    },
+    ESLintWebpackPlugin {
+      "options": Object {
+        "baseConfig": Object {
+          "extends": Array [
+            "standard",
+          ],
+        },
+        "extensions": Array [
+          "js",
+          "ts",
+          "jsx",
+          "tsx",
+        ],
+        "files": "src",
+      },
+      "run": [Function],
+    },
+    StylelintWebpackPlugin {
+      "options": Object {
+        "allowEmptyInput": true,
+        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
+        "files": "src/**/*.{css,scss,less}",
+        "formatter": [Function],
+        "stylelintPath": "stylelint",
+      },
+    },
+    HotModuleReplacementPlugin {
+      "options": Object {},
+    },
+    ForkTsCheckerWebpackPlugin {
+      "options": Object {
+        "typescript": Object {
+          "diagnosticOptions": Object {
+            "semantic": true,
+            "syntactic": true,
+          },
+          "mode": "write-references",
+        },
+      },
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@": "<PROJECT_ROOT>/src",
+    },
+    "extensions": Array [
+      ".js",
+      ".ts",
+      ".jsx",
+      ".tsx",
+      ".mjs",
+      ".wasm",
+      ".json",
+    ],
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "resolveLoader": Object {
+    "modules": Array [
+      "node_modules",
+      "<PROJECT_ROOT>/packages/webpack-config-base/node_modules",
+      "<PROJECT_ROOT>/node_modules",
+    ],
+  },
+  "stats": Object {
+    "all": false,
+    "colors": true,
+    "errors": true,
+  },
+}
+`;

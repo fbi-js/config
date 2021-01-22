@@ -1,6 +1,7 @@
 import { Options } from '@fbi-js/webpack-config-base'
 
 export default (options: Partial<Options> = {}): Partial<Options> => ({
+  ...options,
   babel: {
     presets: [
       '@babel/preset-env',
@@ -11,14 +12,15 @@ export default (options: Partial<Options> = {}): Partial<Options> => ({
         }
       ]
     ],
-    plugins: ['@babel/plugin-proposal-class-properties']
+    plugins: ['@babel/plugin-proposal-class-properties'],
+    ...options.babel
   },
   eslint: {
     extensions: ['js', 'ts', 'jsx', 'tsx'],
     files: 'src',
     baseConfig: {
       extends: [options?.isTs ? '@fbi-js/react-typescript' : '@fbi-js/react']
-    }
-  },
-  ...options
+    },
+    ...options.eslint
+  }
 })
