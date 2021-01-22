@@ -16,7 +16,6 @@ export default (options: Partial<Options> = {}): Partial<Options> => ({
   eslint: {
     extensions: ['js', 'ts', 'jsx', 'tsx'],
     files: 'src',
-    allowInlineConfig: false,
     baseConfig: {
       extends: [options?.isTs ? '@fbi-js/react-typescript' : '@fbi-js/react']
     }

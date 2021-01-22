@@ -4,7 +4,6 @@ export default (options: Partial<Options> = {}): Partial<Options> => ({
   eslint: {
     extensions: ['js', 'ts', 'jsx', 'tsx', 'vue'],
     files: 'src',
-    allowInlineConfig: false,
     baseConfig: {
       extends: [options?.isTs ? '@fbi-js/vue-typescript' : '@fbi-js/vue']
     }
