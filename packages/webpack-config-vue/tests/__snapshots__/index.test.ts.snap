@@ -17,9 +17,13 @@ Object {
       "Access-Control-Allow-Origin": "*",
     },
     "historyApiFallback": true,
+    "hot": true,
+    "injectClient": true,
+    "liveReload": false,
     "open": false,
     "overlay": true,
     "port": 9000,
+    "transportMode": "ws",
   },
   "devtool": "inline-source-map",
   "entry": Object {
@@ -88,7 +92,7 @@ Object {
                   "value": true,
                 },
                 "cli_pkg_main_0_": [Function],
-                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+                "info": "dart-sass	1.32.5	(Sass Compiler)	[Dart]
 dart2js	2.10.4	(Dart Compiler)	[Dart]",
                 "render": [Function],
                 "renderSync": [Function],
@@ -315,9 +319,13 @@ Object {
       "Access-Control-Allow-Origin": "*",
     },
     "historyApiFallback": true,
+    "hot": true,
+    "injectClient": true,
+    "liveReload": false,
     "open": false,
     "overlay": true,
     "port": 9000,
+    "transportMode": "ws",
   },
   "devtool": "inline-source-map",
   "entry": Object {
@@ -387,7 +395,7 @@ Object {
                   "value": true,
                 },
                 "cli_pkg_main_0_": [Function],
-                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+                "info": "dart-sass	1.32.5	(Sass Compiler)	[Dart]
 dart2js	2.10.4	(Dart Compiler)	[Dart]",
                 "render": [Function],
                 "renderSync": [Function],
@@ -623,9 +631,13 @@ Object {
       "Access-Control-Allow-Origin": "*",
     },
     "historyApiFallback": true,
+    "hot": true,
+    "injectClient": true,
+    "liveReload": false,
     "open": false,
     "overlay": true,
     "port": 9000,
+    "transportMode": "ws",
   },
   "devtool": "inline-source-map",
   "entry": Object {
@@ -695,7 +707,7 @@ Object {
                   "value": true,
                 },
                 "cli_pkg_main_0_": [Function],
-                "info": "dart-sass	1.32.4	(Sass Compiler)	[Dart]
+                "info": "dart-sass	1.32.5	(Sass Compiler)	[Dart]
 dart2js	2.10.4	(Dart Compiler)	[Dart]",
                 "render": [Function],
                 "renderSync": [Function],

@@ -35,20 +35,10 @@ export default ({
     options.babel?.presets.push('@babel/preset-typescript')
   }
 
-  const cssLoaderOptions = {
-    sourceMap: true,
-    importLoaders: 2,
-    modules: {
-      localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64]',
-      exportLocalsConvention: 'camelCaseOnly',
-      auto: true
-    }
-  }
-
   const baseCssLoaders: any[] = [
     {
       loader: 'css-loader',
-      options: cssLoaderOptions
+      options: options.css
     },
     {
       loader: 'postcss-loader',

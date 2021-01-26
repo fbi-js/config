@@ -169,6 +169,15 @@ export const resolveOptions = (options: Partial<Options> = {}): Options => {
       ...defaults.babel,
       ...options.babel
     },
+    css: {
+      sourceMap: true,
+      importLoaders: 2,
+      modules: {
+        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64]',
+        exportLocalsConvention: 'camelCaseOnly',
+        auto: true
+      }
+    },
     postcss: {
       ...defaults.postcss,
       sourceMap: isDev,

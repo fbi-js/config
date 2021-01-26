@@ -33,7 +33,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
-    "webpack": "^5.13.0"
+    "webpack": "^5.17.0"
   },
   "eslintConfig": {
     "extends": [

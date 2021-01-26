@@ -66,16 +66,26 @@ npm i -D @fbi-js/webpack-config-base webpack@5 webpack-dev-server@next
 
 ```ts
 interface Options {
+  // project title (used by html-webpack-plugin and webpackbar)
   title?: string
+  // using typescript or not
   isTs?: boolean
+  // common paths config. Type: https://github.com/fbi-js/config/blob/main/packages/webpack-config-base/src/types.ts#L4
   paths: PathsConfig
+  // used by webpack.DefinePlugin. https://webpack.js.org/plugins/define-plugin/
   definePluginData: Record<string, any>
+  // https://webpack.js.org/configuration/optimization/
   optimization: Configuration['optimization']
+  // https://webpack.js.org/configuration/performance/
   performance: Configuration['performance']
+  // https://webpack.js.org/configuration/stats/
   stats: Configuration['stats']
+  // https://webpack.js.org/configuration/dev-server/
   devServer: Record<string, any>
   // https://github.com/babel/babel-loader#options
   babel: Record<string, any>
+  // https://github.com/webpack-contrib/css-loader#options
+  css: Record<string, any>
   // https://github.com/webpack-contrib/postcss-loader#options
   postcss: Record<string, any>
   // https://github.com/webpack-contrib/sass-loader#options
