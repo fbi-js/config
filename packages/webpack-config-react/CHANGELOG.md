@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.1
+
+### Patch Changes
+
+- support react hot reload; expose 'css' option
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.5.1
+
 ## 1.3.0
 
 ### Minor Changes
