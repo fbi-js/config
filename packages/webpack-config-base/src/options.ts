@@ -54,6 +54,10 @@ export const defaults = {
       'Access-Control-Allow-Methods': '*'
     },
     // host: HOST,
+    hot: true,
+    transportMode: 'ws',
+    injectClient: true,
+    liveReload: false,
     port: PORT,
     // https://github.com/webpack/webpack-dev-server/releases/tag/v4.0.0-beta.0
     // static: [paths.public],
