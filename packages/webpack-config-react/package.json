@@ -28,7 +28,9 @@
     "@babel/preset-react": "^7.12.10",
     "@fbi-js/eslint-config-react-typescript": "^1.2.0",
     "@fbi-js/tsconfig": "^1.2.0",
-    "@fbi-js/webpack-config-base": "^1.5.0"
+    "@fbi-js/webpack-config-base": "^1.5.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "react-refresh": "^0.9.0"
   },
   "devDependencies": {
     "webpack": "^5.13.0"
