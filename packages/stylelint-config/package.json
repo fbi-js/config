@@ -5,12 +5,8 @@
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/stylelint-config",
   "repository": "fbi-js/config",
   "license": "MIT",
-  "contributors": [
-    "neikvon <neikvon@hotmail.com>"
-  ],
-  "files": [
-    "index.js"
-  ],
+  "contributors": ["neikvon <neikvon@hotmail.com>"],
+  "files": ["index.js"],
   "main": "index.js",
   "scripts": {
     "format": "prettier -cw index.js && npx eslint index.js --fix"
@@ -20,14 +16,20 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "peerDependencies": {
-    "stylelint": "^13.8.0"
+    "stylelint": "^13.9.0"
+  },
+  "peerDependenciesMeta": {
+    "stylelint": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "stylelint": "^13.9.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "eslintConfig": {
-    "extends": [
-      "../eslint-config"
-    ]
+    "extends": ["../eslint-config"]
   }
 }

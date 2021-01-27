@@ -17,6 +17,11 @@
   "peerDependencies": {
     "typescript": ">=3.9"
   },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
   "publishConfig": {
     "access": "public"
   }

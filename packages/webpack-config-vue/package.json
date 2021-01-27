@@ -6,9 +6,7 @@
   "repository": "fbi-js/config",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "engines": {
     "node": ">=10"
   },
@@ -33,11 +31,15 @@
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
-    "webpack": "^5.17.0"
+    "webpack": "^5.17.0",
+    "css-loader": "^5.0.1"
+  },
+  "peerDependenciesMeta": {
+    "css-loader": {
+      "optional": true
+    }
   },
   "eslintConfig": {
-    "extends": [
-      "../eslint-config-typescript"
-    ]
+    "extends": ["../eslint-config-typescript"]
   }
 }
