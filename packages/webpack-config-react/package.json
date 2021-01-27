@@ -33,7 +33,13 @@
     "react-refresh": "^0.9.0"
   },
   "devDependencies": {
-    "webpack": "^5.17.0"
+    "webpack": "^5.17.0",
+    "@babel/core": "^7.12.10"
+  },
+  "peerDependenciesMeta": {
+    "webpack-dev-server": {
+      "optional": true
+    }
   },
   "eslintConfig": {
     "extends": [
