@@ -100,7 +100,6 @@ export const defaults = {
   },
   stylelint: {
     files: 'src/**/*.{css,scss,less}',
-    configFile: require.resolve('@fbi-js/stylelint-config'),
     // https://github.com/stylelint/stylelint/issues/4380#issuecomment-546302636
     allowEmptyInput: true
   },
