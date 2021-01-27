@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.3
+
+### Patch Changes
+
+- remove stylelint option 'configFile'
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.5.3
+
 ## 1.3.2
 
 ### Patch Changes

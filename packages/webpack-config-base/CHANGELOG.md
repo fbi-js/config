@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.3
+
+### Patch Changes
+
+- remove stylelint option 'configFile'
+
 ## 1.5.2
 
 ### Patch Changes
