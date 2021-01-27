@@ -1,5 +1,11 @@
 # @fbi-js/eslint-config
 
+## 1.2.1
+
+### Patch Changes
+
+- fix webpack-config-react plugins error; remove peerDependencies warnings
+
 ## 1.2.0
 
 ### Minor Changes

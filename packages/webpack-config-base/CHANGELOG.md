@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.2
+
+### Patch Changes
+
+- fix webpack-config-react plugins error; remove peerDependencies warnings
+
 ## 1.5.1
 
 ### Patch Changes

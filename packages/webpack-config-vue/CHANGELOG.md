@@ -1,5 +1,16 @@
 # @fbi-js/webpack-config-vue
 
+## 1.3.2
+
+### Patch Changes
+
+- fix webpack-config-react plugins error; remove peerDependencies warnings
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config-vue-typescript@1.2.1
+  - @fbi-js/stylelint-config@1.2.1
+  - @fbi-js/tsconfig@1.2.1
+  - @fbi-js/webpack-config-base@1.5.2
+
 ## 1.3.1
 
 ### Patch Changes
