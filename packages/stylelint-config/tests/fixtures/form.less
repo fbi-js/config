@@ -1,0 +1,39 @@
+.myForm {
+  :global {
+    .@{ant-prefix}-form {
+      &-item {
+        margin-bottom: 20px;
+
+        &-label {
+          text-align: left;
+
+          label {
+            margin-left: 10px;
+            font-size: 14px;
+
+            &::after {
+              content: '';
+            }
+          }
+        }
+
+        &-required {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+a:hover {
+  text-align: left;
+}
+a:focus {
+  text-align: left;
+}
+.x:not(p) {
+  text-align: left;
+}
+input:-moz-placeholder {
+  text-align: left;
+}
