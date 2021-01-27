@@ -44,5 +44,5 @@ export default ({
   return webpackConfigBase({
     options,
     webpackConfig: config
-  })
+  }) as Configuration
 }
