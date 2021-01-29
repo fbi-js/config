@@ -1,6 +1,6 @@
-import { Options } from '@fbi-js/webpack-config-base'
+import { PartialOptions } from '@fbi-js/webpack-config-base'
 
-export default (options: Partial<Options> = {}): Partial<Options> => ({
+export default (options: PartialOptions = {}): PartialOptions => ({
   ...options,
   eslint: {
     extensions: ['js', 'ts', 'jsx', 'tsx', 'vue'],
@@ -12,7 +12,6 @@ export default (options: Partial<Options> = {}): Partial<Options> => ({
   },
   stylelint: {
     files: 'src/**/*.{css,scss,vue}',
-    configFile: require.resolve('@fbi-js/stylelint-config'),
     allowEmptyInput: true,
     ...options.stylelint
   }

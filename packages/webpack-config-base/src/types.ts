@@ -52,7 +52,11 @@ export interface Options {
   mergeRules: MergeRules
 }
 
+export interface PartialOptions extends Partial<Omit<Options, 'paths'>> {
+  paths?: Partial<PathsConfig>
+}
+
 export interface ConfigFunctionParams {
   webpackConfig?: Configuration
-  options?: Partial<Options>
+  options?: PartialOptions
 }

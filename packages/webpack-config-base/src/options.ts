@@ -2,7 +2,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import { CustomizeRule } from 'webpack-merge'
 
 import { resolve } from 'path'
-import { Options } from './types'
+import { Options, PartialOptions } from './types'
 import { isProd } from './utils'
 
 const cwd = process.cwd()
@@ -123,7 +123,7 @@ export const defaults = {
   }
 }
 
-export const resolveOptions = (options: Partial<Options> = {}): Options => {
+export const resolveOptions = (options: PartialOptions = {}): Options => {
   const isDev = !isProd()
 
   return {

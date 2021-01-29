@@ -246,7 +246,6 @@ dart2js	2.10.4	(Dart Compiler)	[Dart]",
     StylelintWebpackPlugin {
       "options": Object {
         "allowEmptyInput": true,
-        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
         "files": "src/**/*.{css,scss,less}",
         "formatter": [Function],
         "stylelintPath": "stylelint",
@@ -546,7 +545,6 @@ dart2js	2.10.4	(Dart Compiler)	[Dart]",
     StylelintWebpackPlugin {
       "options": Object {
         "allowEmptyInput": true,
-        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
         "files": "src/**/*.{css,scss,less}",
         "formatter": [Function],
         "stylelintPath": "stylelint",
@@ -837,7 +835,6 @@ dart2js	2.10.4	(Dart Compiler)	[Dart]",
     StylelintWebpackPlugin {
       "options": Object {
         "allowEmptyInput": true,
-        "configFile": "<PROJECT_ROOT>/packages/stylelint-config/index.js",
         "files": "src/**/*.{css,scss,less}",
         "formatter": [Function],
         "stylelintPath": "stylelint",
