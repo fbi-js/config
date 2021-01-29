@@ -23,7 +23,7 @@ export interface Options {
   // using typescript or not
   isTs?: boolean
   // common paths config
-  paths: Partial<PathsConfig>
+  paths: PathsConfig
   // used by webpack.DefinePlugin. https://webpack.js.org/plugins/define-plugin/
   definePluginData: Record<string, any>
   // https://webpack.js.org/configuration/optimization/
