@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.4
+
+### Patch Changes
+
+- add 'PartialOptions' type, make 'Options' optional
+
 ## 1.5.3
 
 ### Patch Changes

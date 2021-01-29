@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.4
+
+### Patch Changes
+
+- add 'PartialOptions' type, make 'Options' optional
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.5.4
+
 ## 1.3.3
 
 ### Patch Changes
