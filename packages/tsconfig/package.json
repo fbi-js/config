@@ -17,6 +17,12 @@
   "peerDependencies": {
     "typescript": ">=3.9"
   },
+  "devDependencies": {
+    "@types/node": "^14.14.30",
+    "@types/webpack": "^4.41.26",
+    "@types/webpack-dev-server": "^3.11.1",
+    "ts-node": "^9.1.1"
+  },
   "peerDependenciesMeta": {
     "typescript": {
       "optional": true
