@@ -16,10 +16,13 @@
     "@fbi-js/eslint-config-vue": "^1.1.0",
     "eslint": "^7.17.0",
     "vue": "^2.6.12",
+    "webpack-dev-server": "4.0.0-beta.0",
     "vue-router": "^3.4.9"
   },
   "eslintConfig": {
-    "extends": ["@fbi-js/vue"]
+    "extends": [
+      "@fbi-js/vue"
+    ]
   },
   "prettier": {
     "semi": false,
