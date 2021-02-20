@@ -1,4 +1,5 @@
 import { PartialOptions } from '@fbi-js/webpack-config-base'
+import { Configuration } from 'webpack'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -29,3 +30,14 @@ export default (options: PartialOptions = {}): PartialOptions => ({
     ...options.eslint
   }
 })
+
+export const defaultConfig: Configuration = {
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      }
+    ]
+  }
+}

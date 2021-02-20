@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "npx eslint src",
     "build": "NODE_ENV=production webpack",
-    "serve": "webpack serve",
+    "serve": "NODE_ENV=development webpack serve",
     "format": "prettier -cw \"src/*.{ts,tsx,css,less,scss}\" && npx eslint --ext ts,tsx src --fix"
   },
   "keywords": [],

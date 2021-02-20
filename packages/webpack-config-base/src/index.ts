@@ -107,7 +107,7 @@ export default ({
           ]
         },
         {
-          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          test: /\.(png|jpe?g|gif)(\?.*)?$/,
           type: 'asset',
           parser: {
             dataUrlCondition: {
@@ -184,8 +184,8 @@ export default ({
       isDev
         ? new webpack.HotModuleReplacementPlugin()
         : new MiniCssExtractPlugin({
-          filename: `${options.paths.css}/[name].[contenthash].css`
-        })
+            filename: `${options.paths.css}/[name].[contenthash].css`
+          })
     ].filter(Boolean),
     resolve: {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.mjs', '.wasm', '.json'],
