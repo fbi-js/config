@@ -22,5 +22,8 @@
   "vetur.format.styleInitialIndent": true,
   "vetur.format.scriptInitialIndent": true,
   "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "vetur.format.defaultFormatter.ts": "vscode-typescript"
+  "vetur.format.defaultFormatter.ts": "vscode-typescript",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  }
 }

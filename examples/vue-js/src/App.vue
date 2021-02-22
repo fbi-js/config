@@ -7,9 +7,6 @@
     name: 'App',
 
     methods: {
-      a () {
-        let x
-      }
     }
   }
 </script>
