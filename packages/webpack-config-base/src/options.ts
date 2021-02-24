@@ -110,6 +110,7 @@ export const defaults = {
     module: {
       rules: {
         test: CustomizeRule.Match,
+        type: CustomizeRule.Replace,
         use: {
           loader: CustomizeRule.Match,
           options: CustomizeRule.Replace
