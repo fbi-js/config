@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.6
+
+### Patch Changes
+
+- change devtool to 'eval-cheap-module-source-map'
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.5.6
+
 ## 1.3.5
 
 ### Patch Changes

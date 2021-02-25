@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.6
+
+### Patch Changes
+
+- change devtool to 'eval-cheap-module-source-map'
+
 ## 1.5.5
 
 ### Patch Changes
