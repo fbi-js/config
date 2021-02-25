@@ -53,7 +53,6 @@ export const defaults = {
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Allow-Methods': '*'
     },
-    // host: HOST,
     hot: true,
     transportMode: 'ws',
     injectClient: true,
@@ -63,7 +62,8 @@ export const defaults = {
     // static: [paths.public],
     firewall: false,
     client: {
-      host: HOST
+      host: HOST,
+      port: PORT,
     }
   },
   babel: {
@@ -94,6 +94,9 @@ export const defaults = {
   eslint: {
     extensions: ['js', 'ts', 'jsx', 'tsx'],
     files: 'src',
+    emitError: true,
+    emitWarning: true,
+    failOnError: true,
     baseConfig: {
       extends: ['@fbi-js']
     }
@@ -110,7 +113,8 @@ export const defaults = {
     module: {
       rules: {
         test: CustomizeRule.Match,
-        type: CustomizeRule.Replace,
+        issuer: CustomizeRule.Match,
+        // type: CustomizeRule.Replace,
         use: {
           loader: CustomizeRule.Match,
           options: CustomizeRule.Replace

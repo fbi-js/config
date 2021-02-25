@@ -2,7 +2,7 @@
 
 ## Pull Request Guidelines
 
-- Checkout a topic branch from `main` branch, and merge back against that branch.
+- Folk the repository to your own account.
 - Work in the `packages` folder.
 - Use [fbi commit](https://github.com/fbi-js/factory-commands/blob/main/src/commands/commit/README.md) to commit your code.
 
@@ -12,32 +12,20 @@
     # usage
     npx fbi commit
     ```
+- Create a new pull request: https://github.com/fbi-js/config/compare
 
 ## Development
 
-- Setup
-
-   ```bash
-   npm i -g fbi
-   yarn
-   ```
-
-- Start development
-
-   ```bash
-   yarn dev
-   ```
+```bash
+yarn
+yarn build
+yarn dev
+```
 
 ## Test
 
 ```bash
 yarn test
-```
-
-## Build
-
-```bash
-yarn build
 ```
 
 ## Commit

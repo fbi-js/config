@@ -11,7 +11,6 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 import { isProd, getEnvMode } from './utils'
 import { defaults as defaultOptions, resolveOptions } from './options'
@@ -59,7 +58,7 @@ export default ({
 
   const config = {
     mode: getEnvMode(),
-    devtool: isDev ? 'inline-source-map' : false,
+    devtool: isDev ? 'eval-cheap-source-map' : false,
     entry: {
       main: join(options.paths.src, `main.${options.isTs ? 'ts' : 'js'}`)
     },
@@ -120,10 +119,16 @@ export default ({
               : `${options.paths.img}/[name].[hash][ext][query]`
           }
         },
+        // https://github.com/gregberge/svgr/issues/396#issuecomment-714866066
         {
-          test: /\.svg(\?.*)?$/,
-          type: 'asset',
-          use: []
+          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+          issuer: /\.(j|t)sx?$/,
+          use: ['@svgr/webpack']
+        },
+        {
+          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+          issuer: /\.(sc|sa|c|le)ss$/,
+          loader: 'url-loader'
         },
         {
           test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
@@ -221,20 +226,6 @@ export default ({
           optimization: options.optimization,
           performance: options.performance
         })
-  }
-
-  if (options.isTs && Array.isArray(config.plugins)) {
-    config.plugins.push(
-      new ForkTsCheckerWebpackPlugin({
-        typescript: {
-          diagnosticOptions: {
-            semantic: true,
-            syntactic: true
-          },
-          mode: 'write-references'
-        }
-      })
-    )
   }
 
   return webpackMerge.mergeWithRules(options.mergeRules)(

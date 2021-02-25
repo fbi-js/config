@@ -27,6 +27,28 @@ export default ({
             options: {
               shadowMode: true
             }
+          },
+          {
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            issuer: /\.vue$/,
+            // https://vue-svg-loader.js.org/faq.html#how-to-use-both-inline-and-external-svgs
+            oneOf: [
+              {
+                resourceQuery: /inline/,
+                use: [
+                  {
+                    // https://github.com/webpack-contrib/url-loader#options
+                    loader: 'url-loader',
+                    options: {
+                      limit: 4 * 1024 // 4kb
+                    }
+                  }
+                ]
+              },
+              {
+                use: ['vue-loader', 'vue-svg-loader']
+              }
+            ]
           }
         ]
       },

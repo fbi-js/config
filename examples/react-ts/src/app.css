@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.buttom-logo {
+  width: 40px;
+  height: 40px;
+  background: url(./logo.svg) center center no-repeat;
+}
+
 @keyframes app-logo-spin {
   from {
     transform: rotate(0deg);

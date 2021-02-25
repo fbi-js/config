@@ -31,17 +31,4 @@ export default (options: PartialOptions = {}): PartialOptions => ({
   }
 })
 
-export const defaultConfig: Configuration = {
-  module: {
-    rules: [
-      {
-        test: /\.svg(\?.*)?$/,
-        use: [
-          {
-            loader: '@svgr/webpack'
-          }
-        ]
-      }
-    ]
-  }
-}
+export const defaultConfig: Configuration = {}

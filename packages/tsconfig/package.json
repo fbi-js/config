@@ -15,10 +15,10 @@
     "vue.json"
   ],
   "peerDependencies": {
-    "typescript": ">=3.9"
+    "typescript": ">=3.9 <4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.30",
+    "@types/node": "^14.14.31",
     "@types/webpack": "^4.41.26",
     "@types/webpack-dev-server": "^3.11.1",
     "ts-node": "^9.1.1"
