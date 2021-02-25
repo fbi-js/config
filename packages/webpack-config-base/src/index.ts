@@ -58,7 +58,7 @@ export default ({
 
   const config = {
     mode: getEnvMode(),
-    devtool: isDev ? 'eval-cheap-source-map' : false,
+    devtool: isDev ? 'eval-cheap-module-source-map' : false,
     entry: {
       main: join(options.paths.src, `main.${options.isTs ? 'ts' : 'js'}`)
     },
