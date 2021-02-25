@@ -1,5 +1,16 @@
 # @fbi-js/webpack-config-react
 
+## 1.3.5
+
+### Patch Changes
+
+- remove fork-ts-checker-webpack-plugin; update deps; fix svg using issues in react & vue project
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config-react-typescript@1.2.2
+  - @fbi-js/stylelint-config@1.2.2
+  - @fbi-js/tsconfig@1.2.2
+  - @fbi-js/webpack-config-base@1.5.5
+
 ## 1.3.4
 
 ### Patch Changes

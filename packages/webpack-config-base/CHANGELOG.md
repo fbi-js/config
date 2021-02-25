@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.5
+
+### Patch Changes
+
+- remove fork-ts-checker-webpack-plugin; update deps; fix svg using issues in react & vue project
+
 ## 1.5.4
 
 ### Patch Changes

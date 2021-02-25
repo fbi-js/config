@@ -1,5 +1,14 @@
 # @fbi-js/eslint-config-react-typescript
 
+## 1.2.2
+
+### Patch Changes
+
+- remove fork-ts-checker-webpack-plugin; update deps; fix svg using issues in react & vue project
+- Updated dependencies [undefined]
+  - @fbi-js/eslint-config-react@1.2.2
+  - @fbi-js/eslint-config-typescript@1.2.2
+
 ## 1.2.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @fbi-js/eslint-config
 
+## 1.2.2
+
+### Patch Changes
+
+- remove fork-ts-checker-webpack-plugin; update deps; fix svg using issues in react & vue project
+
 ## 1.2.1
 
 ### Patch Changes

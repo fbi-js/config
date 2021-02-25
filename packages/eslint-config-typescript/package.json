@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/eslint-config-typescript",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "ESLint config for Typescript project",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/eslint-config-typescript",
   "repository": "fbi-js/config",
@@ -15,7 +15,7 @@
     "format": "prettier -cw index.js && npx eslint index.js --fix"
   },
   "dependencies": {
-    "@fbi-js/eslint-config": "^1.2.1",
+    "@fbi-js/eslint-config": "^1.2.2",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "eslint-import-resolver-typescript": "^2.4.0"
