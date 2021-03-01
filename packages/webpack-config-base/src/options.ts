@@ -57,14 +57,11 @@ export const defaults = {
     transportMode: 'ws',
     injectClient: true,
     liveReload: false,
+    host: HOST,
     port: PORT,
     // https://github.com/webpack/webpack-dev-server/releases/tag/v4.0.0-beta.0
     // static: [paths.public],
-    firewall: false,
-    client: {
-      host: HOST,
-      port: PORT,
-    }
+    firewall: false
   },
   babel: {
     presets: ['@babel/preset-env'],
