@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.5.7
+
+### Patch Changes
+
+- fix webpack-config-vue require svg error
+
 ## 1.5.6
 
 ### Patch Changes
