@@ -30,7 +30,7 @@
     "@fbi-js/tsconfig": "^1.2.2",
     "@fbi-js/webpack-config-base": "^1.5.6",
     "vue-loader": "^15.9.6",
-    "vue-svg-loader": "^0.17.0-beta.2",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {

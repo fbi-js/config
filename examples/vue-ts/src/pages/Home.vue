@@ -30,6 +30,16 @@
         <p>png(vue)</p>
       </div>
 
+      <!-- <div class="img-item">
+        <img src="@/assets/img/logo.svg">
+        <p>svg(image src use url-loader)</p>
+      </div> -->
+
+      <div class="img-item">
+        <img :src="logoSvg">
+        <p>svg(image src use require)</p>
+      </div>
+
       <div class="img-item">
         <div class="bg bg-svg-css" />
         <p>svg(css)</p>
@@ -44,17 +54,28 @@
 </template>
 
 <script lang="ts">
+  import Vue from 'vue'
   import Header from '@/components/Header.vue'
-  import Logo from '@/assets/img/logo.svg'
+  import inlineLogo from '@/assets/img/logo.svg?inline'
 
-  export default {
+  export default Vue.extend({
     name: 'Home',
-
     components: {
       Header,
-      Logo
+      Logo: inlineLogo
+    },
+    data () {
+      return {
+        name: '张三',
+        logoSvg: require('@/assets/img/logo.svg')
+      }
+    },
+    methods: {
+      init () {
+        this.name = '李四'
+      }
     }
-  }
+  })
 </script>
 
 <style scoped lang="scss">
@@ -90,7 +111,7 @@
         margin: 0 auto;
 
         &.bg-svg {
-          background-image: url('~@/assets/img/logo.svg?inline');
+          background-image: url('~@/assets/img/logo.svg');
         }
 
         &.bg-png {

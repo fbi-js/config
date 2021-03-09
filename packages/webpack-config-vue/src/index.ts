@@ -34,19 +34,20 @@ export default ({
             // https://vue-svg-loader.js.org/faq.html#how-to-use-both-inline-and-external-svgs
             oneOf: [
               {
-                resourceQuery: /inline/,
                 use: [
                   {
                     // https://github.com/webpack-contrib/url-loader#options
                     loader: 'url-loader',
                     options: {
-                      limit: 4 * 1024 // 4kb
+                      limit: 4 * 1024, // 4kb
+                      esModule: false // fix [object module] bug, link: https://blog.csdn.net/csstmg/article/details/110172097
                     }
                   }
                 ]
               },
               {
-                use: ['vue-loader', 'vue-svg-loader']
+                resourceQuery: /inline/,
+                use: ['babel-loader', 'vue-svg-loader']
               }
             ]
           }

@@ -63,7 +63,7 @@ export const defaults = {
     firewall: false,
     client: {
       host: HOST,
-      port: PORT,
+      port: PORT
     }
   },
   babel: {
@@ -114,15 +114,14 @@ export const defaults = {
       rules: {
         test: CustomizeRule.Match,
         issuer: CustomizeRule.Match,
+        use: CustomizeRule.Replace,
+        oneOf: CustomizeRule.Replace,
+        loaders: CustomizeRule.Replace
         // type: CustomizeRule.Replace,
-        use: {
-          loader: CustomizeRule.Match,
-          options: CustomizeRule.Replace
-        },
-        loaders: {
-          loader: CustomizeRule.Match,
-          options: CustomizeRule.Replace
-        }
+        // loaders: {
+        //   loader: CustomizeRule.Replace,
+        //   options: CustomizeRule.Replace
+        // }
       }
     }
   }

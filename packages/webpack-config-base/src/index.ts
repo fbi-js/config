@@ -69,7 +69,7 @@ export default ({
         ? '[name].js?v=[fullhash]'
         : `${options.paths.js}/[name].[fullhash].js`,
       assetModuleFilename: isDev
-        ? '[name][ext][query]'
+        ? '[name].[hash][ext][query]'
         : `${options.paths.assets}/[name].[hash][ext][query]`
     },
     cache: {
@@ -120,18 +120,23 @@ export default ({
           }
         },
         // https://github.com/gregberge/svgr/issues/396#issuecomment-714866066
-        {
-          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-          issuer: /\.(j|t)sx?$/,
-          use: ['@svgr/webpack']
-        },
+        // {
+        //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        //   issuer: /\.(j|t)sx?$/,
+        //   use: ['@svgr/webpack']
+        // },
+        // {
+        //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        //   issuer: /\.(sc|sa|c|le)ss$/,
+        //   loader: 'url-loader'
+        // },
         {
           test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
           issuer: /\.(sc|sa|c|le)ss$/,
-          loader: 'url-loader'
+          type: 'asset/resource'
         },
         {
-          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+          test: /\.(mp4|mov|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
           type: 'asset/resource'
         },
         {
