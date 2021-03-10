@@ -215,9 +215,5 @@ export const resolveOptions = (options: PartialOptions = {}): Options => {
     }
   }
 
-  if (options.isTs) {
-    options.babel?.presets.push('@babel/preset-typescript')
-  }
-
   return mergeOptions
 }

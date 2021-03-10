@@ -7,7 +7,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin'
-// import ProgressWebpackPlugin from '../progress-webpack-plugin'
+import ProgressWebpackPlugin from '../progress-webpack-plugin'
 
 import { isProd } from '../utils'
 
@@ -20,7 +20,7 @@ export const getWebpackPlugins = (options: any) => {
 
   const plugins: any[] = [
     // use prefetchPlugin to improve the incremental build times
-    // new webpack.AutomaticPrefetchPlugin(),
+    new webpack.AutomaticPrefetchPlugin(),
     // Make appName & appVersion available as a constant
     new webpack.DefinePlugin(options.definePluginData),
     // Removes/cleans build folders and unused assets when rebuilding
@@ -35,11 +35,11 @@ export const getWebpackPlugins = (options: any) => {
     // add hmr
     plugins.push(new webpack.HotModuleReplacementPlugin())
     // add process plugin
-    // plugins.push(new ProgressWebpackPlugin({
-    //   format: 'minimal',
-    //   color: 'white',
-    //   ...options.progress
-    // }))
+    plugins.push(new ProgressWebpackPlugin({
+      format: 'minimal',
+      color: 'white',
+      ...options.progress
+    }))
     // add dllplugin to improve compair speed
     // plugins.push(new webpack.DllPlugin({
     //   context: __dirname,

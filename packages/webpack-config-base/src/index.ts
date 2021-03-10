@@ -17,6 +17,10 @@ export default ({
 }: ConfigFunctionParams = {}): Configuration => {
   const options = resolveOptions(userOptions)
 
+  if (options.isTs) {
+    options.babel?.presets.push('@babel/preset-typescript')
+  }
+
   const config = {
     mode: getEnvMode(),
     devtool: webpackUtils.getDevTools(options),

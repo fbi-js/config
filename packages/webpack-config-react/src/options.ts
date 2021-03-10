@@ -38,25 +38,7 @@ export const defaultConfig: Configuration = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         issuer: /\.(j|t)sx$/,
-        // https://vue-svg-loader.js.org/faq.html#how-to-use-both-inline-and-external-svgs
-        oneOf: [
-          {
-            use: [
-              {
-                // https://github.com/webpack-contrib/url-loader#options
-                loader: 'url-loader',
-                options: {
-                  limit: 4 * 1024, // 4kb
-                  esModule: false // fix [object module] bug, link: https://blog.csdn.net/csstmg/article/details/110172097
-                }
-              }
-            ]
-          },
-          {
-            resourceQuery: /inline/,
-            use: ['@svgr/webpack']
-          }
-        ]
+        use: ['@svgr/webpack']
       }
     ]
   }
