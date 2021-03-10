@@ -1,5 +1,16 @@
 # @fbi-js/webpack-config-vue
 
+## 1.4.0
+
+### Minor Changes
+
+- better use vue or react webpack config
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.6.0
+
 ## 1.3.7
 
 ### Patch Changes

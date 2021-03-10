@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.6.0
+
+### Minor Changes
+
+- better use vue or react webpack config
+
 ## 1.5.7
 
 ### Patch Changes

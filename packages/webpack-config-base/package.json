@@ -1,6 +1,6 @@
 {
   "name": "@fbi-js/webpack-config-base",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "description": "Webpack base config",
   "homepage": "https://github.com/fbi-js/config/tree/master/packages/webpack-config-base",
   "repository": "fbi-js/config",
@@ -53,8 +53,8 @@
     "webpack-merge": "^5.7.3",
     "webpackbar": "^5.0.0-3",
     "chalk": "2.4.x",
-		"figures": "2.0.x",
-		"log-update": "2.3.x"
+    "figures": "2.0.x",
+    "log-update": "2.3.x"
   },
   "devDependencies": {
     "@fbi-js/tsconfig": "^1.2.2",
@@ -66,7 +66,7 @@
     "stylelint": "^13.11.0",
     "webpack": "^5.24.4",
     "automatic-release": "1.1.x",
-		"pkgfiles": "2.3.x"
+    "pkgfiles": "2.3.x"
   },
   "peerDependencies": {
     "@babel/core": "^7.13.1",
