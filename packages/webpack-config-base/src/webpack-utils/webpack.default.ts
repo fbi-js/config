@@ -129,7 +129,12 @@ export const defaults = {
         // }
       }
     }
-  }
+  },
+  progress: {
+    format: 'minimal',
+    color: 'white'
+  },
+  presets: []
 }
 
 export const resolveOptions = (options: PartialOptions = {}): Options => {
@@ -212,7 +217,12 @@ export const resolveOptions = (options: PartialOptions = {}): Options => {
     mergeRules: {
       ...defaults.mergeRules,
       ...options.mergeRules
-    }
+    },
+    progress: {
+      ...defaults.progress,
+      ...options.progress
+    },
+    presets: options.presets || []
   }
 
   return mergeOptions

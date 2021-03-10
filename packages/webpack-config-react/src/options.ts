@@ -35,11 +35,11 @@ export const defaultConfig: Configuration = {
   module: {
     rules: [
       // https://github.com/gregberge/svgr/issues/396#issuecomment-714866066
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        issuer: /\.(j|t)sx$/,
-        use: ['@svgr/webpack']
-      }
+      // {
+      //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      //   issuer: /\.(j|t)sx$/,
+      //   use: ['@svgr/webpack']
+      // }
     ]
   }
 }

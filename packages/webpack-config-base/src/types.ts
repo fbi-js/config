@@ -18,7 +18,7 @@ declare type MergeRules = {
 }
 
 export interface ProgressConfig {
-  format?: 'minimal' | 'expanded' | 'verbose' | 'compact'
+  format?: string
   color?: string
 }
 
@@ -55,7 +55,8 @@ export interface Options {
   stylelint: Record<string, any>
   // https://github.com/survivejs/webpack-merge#mergewithrules
   mergeRules: MergeRules,
-  progress?: ProgressConfig
+  progress: ProgressConfig,
+  presets: string[]
 }
 
 export interface PartialOptions extends Partial<Omit<Options, 'paths'>> {

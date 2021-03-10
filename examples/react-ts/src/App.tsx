@@ -7,7 +7,7 @@ const App: React.FunctionComponent = () => {
   return (
     <div className='app'>
       <header className='app-header'>
-        <Logo className='app-logo' />
+        <Logo width='100' className='app-logo' />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

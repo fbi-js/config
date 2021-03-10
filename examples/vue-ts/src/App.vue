@@ -8,7 +8,6 @@
 
     methods: {
       handler () {
-        console.log('123哈哈哈123')
       }
       // a () {
       //   let b

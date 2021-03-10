@@ -11,7 +11,8 @@ export const getDevTools = (_options: any) => {
 }
 
 export const getEntryConfig = (options: any) => {
-  const suffix = options.isTs ? 'ts' : 'js'
+  const isTs = options.presets?.includes('typescript')
+  const suffix = isTs ? 'ts' : 'js'
   return options.entry || path.join(options.paths.src, `main.${suffix}`)
 }
 

@@ -1,13 +1,13 @@
 <template>
   <div class="page-home">
     <Header />
-    <p>这是一次改动1222</p>
+    <p>这是一次改动 </p>
     <div class="img-container">
       <h2>image file </h2>
 
       <!-- <div class="img-item">
         <Logo width="60" />
-        <p>svg</p>
+        <p>svg(require)</p>
       </div> -->
 
       <div class="img-item">
@@ -26,23 +26,23 @@
       </div>
 
       <div class="img-item">
-        <div class="bg bg-png" />
-        <p>png(vue)</p>
-      </div>
-
-      <!-- <div class="img-item">
         <img src="@/assets/img/logo.svg">
-        <p>svg(image src use url-loader)</p>
-      </div> -->
+        <p>svg(img)</p>
+      </div>
 
       <div class="img-item">
         <img :src="logoSvg">
-        <p>svg(image src use require)</p>
+        <p>svg(require)</p>
       </div>
 
       <div class="img-item">
         <div class="bg bg-svg-css" />
         <p>svg(css)</p>
+      </div>
+
+      <div class="img-item">
+        <div class="bg bg-png" />
+        <p>png(vue)</p>
       </div>
 
       <div class="img-item">

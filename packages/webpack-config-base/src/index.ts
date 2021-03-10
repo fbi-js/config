@@ -17,7 +17,8 @@ export default ({
 }: ConfigFunctionParams = {}): Configuration => {
   const options = resolveOptions(userOptions)
 
-  if (options.isTs) {
+  const isTs = options.presets?.includes('typescript')
+  if (isTs) {
     options.babel?.presets.push('@babel/preset-typescript')
   }
 
