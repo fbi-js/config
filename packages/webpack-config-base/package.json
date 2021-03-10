@@ -50,7 +50,10 @@
     "stylelint-webpack-plugin": "^2.1.1",
     "url-loader": "^4.1.1",
     "webpack-merge": "^5.7.3",
-    "webpackbar": "^5.0.0-3"
+    "webpackbar": "^5.0.0-3",
+    "chalk": "2.4.x",
+		"figures": "2.0.x",
+		"log-update": "2.3.x"
   },
   "devDependencies": {
     "@fbi-js/tsconfig": "^1.2.2",
@@ -60,7 +63,9 @@
     "@babel/core": "^7.13.1",
     "eslint": "^7.20.0",
     "stylelint": "^13.11.0",
-    "webpack": "^5.24.2"
+    "webpack": "^5.24.4",
+    "automatic-release": "1.1.x",
+		"pkgfiles": "2.3.x"
   },
   "peerDependencies": {
     "@babel/core": "^7.13.1",

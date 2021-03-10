@@ -7,6 +7,7 @@ import '@/assets/css/index.less'
 
 Vue.config.productionTip = false
 
+console.log(123123)
 new Vue({
   name: 'MyApp',
   router,

@@ -1,14 +1,14 @@
 <template>
   <div class="page-home">
     <Header />
-
+    <p>这是一次改动1222</p>
     <div class="img-container">
-      <h2>image file</h2>
+      <h2>image file </h2>
 
-      <div class="img-item">
+      <!-- <div class="img-item">
         <Logo width="60" />
         <p>svg</p>
-      </div>
+      </div> -->
 
       <div class="img-item">
         <img
@@ -56,13 +56,11 @@
 <script lang="ts">
   import Vue from 'vue'
   import Header from '@/components/Header.vue'
-  import inlineLogo from '@/assets/img/logo.svg?inline'
 
   export default Vue.extend({
     name: 'Home',
     components: {
-      Header,
-      Logo: inlineLogo
+      Header
     },
     data () {
       return {

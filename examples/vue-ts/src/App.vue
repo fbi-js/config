@@ -7,9 +7,12 @@
     name: 'App',
 
     methods: {
-      a () {
-        let b
+      handler () {
+        console.log('123哈哈哈123')
       }
+      // a () {
+      //   let b
+      // }
     }
   }
 </script>

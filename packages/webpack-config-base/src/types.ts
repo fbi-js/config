@@ -17,6 +17,11 @@ declare type MergeRules = {
   [s: string]: CustomizeRule | MergeRules
 }
 
+export interface ProgressConfig {
+  format?: 'minimal' | 'expanded' | 'verbose' | 'compact'
+  color?: string
+}
+
 export interface Options {
   // project title (used by html-webpack-plugin and webpackbar)
   title?: string
@@ -49,7 +54,8 @@ export interface Options {
   // https://github.com/webpack-contrib/stylelint-webpack-plugin#options
   stylelint: Record<string, any>
   // https://github.com/survivejs/webpack-merge#mergewithrules
-  mergeRules: MergeRules
+  mergeRules: MergeRules,
+  progress?: ProgressConfig
 }
 
 export interface PartialOptions extends Partial<Omit<Options, 'paths'>> {

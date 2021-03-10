@@ -2,8 +2,8 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import { CustomizeRule } from 'webpack-merge'
 
 import { resolve } from 'path'
-import { Options, PartialOptions } from './types'
-import { isProd } from './utils'
+import { Options, PartialOptions } from '../types'
+import { isProd } from '../utils'
 
 const cwd = process.cwd()
 const PORT = 9000
@@ -44,7 +44,7 @@ export const defaults = {
     chunkIds: 'named' as any
   },
   devServer: {
-    historyApiFallback: true,
+    // historyApiFallback: true,
     compress: true,
     open: false,
     overlay: true,
@@ -57,6 +57,7 @@ export const defaults = {
     transportMode: 'ws',
     injectClient: true,
     liveReload: false,
+    host: '0.0.0.0',
     port: PORT,
     // https://github.com/webpack/webpack-dev-server/releases/tag/v4.0.0-beta.0
     // static: [paths.public],
@@ -67,7 +68,11 @@ export const defaults = {
     }
   },
   babel: {
-    presets: ['@babel/preset-env'],
+    presets: [
+      [
+        '@babel/preset-env'
+      ]
+    ],
     plugins: ['@babel/plugin-proposal-class-properties']
   },
   postcss: {
@@ -130,7 +135,7 @@ export const defaults = {
 export const resolveOptions = (options: PartialOptions = {}): Options => {
   const isDev = !isProd()
 
-  return {
+  const mergeOptions = {
     ...options,
     paths: {
       ...defaults.paths,
@@ -209,4 +214,10 @@ export const resolveOptions = (options: PartialOptions = {}): Options => {
       ...options.mergeRules
     }
   }
+
+  if (options.isTs) {
+    options.babel?.presets.push('@babel/preset-typescript')
+  }
+
+  return mergeOptions
 }
