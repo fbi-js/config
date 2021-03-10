@@ -153,7 +153,7 @@ export default ({
       // Make appName & appVersion available as a constant
       new webpack.DefinePlugin(options.definePluginData),
       // Removes/cleans build folders and unused assets when rebuilding
-      new CleanWebpackPlugin(),
+      !isDev && new CleanWebpackPlugin(),
       // Copies files from target to destination folder
       hasPublicFolder
         ? new CopyWebpackPlugin({
