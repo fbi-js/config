@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.6.2
+
+### Patch Changes
+
+- fix get env error
+
 ## 1.6.1
 
 ### Patch Changes

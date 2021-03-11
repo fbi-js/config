@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-react
 
+## 1.4.2
+
+### Patch Changes
+
+- fix get env error
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.6.2
+
 ## 1.4.1
 
 ### Patch Changes
