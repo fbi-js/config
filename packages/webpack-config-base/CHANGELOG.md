@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.6.1
+
+### Patch Changes
+
+- webpack-config-base: add mini-svg-data-uri dep
+
 ## 1.6.0
 
 ### Minor Changes
