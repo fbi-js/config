@@ -3,9 +3,9 @@ import { isProd } from '../utils'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const svgToMiniDataURI = require('mini-svg-data-uri')
-const isDev = !isProd()
 
 export const getBaseCssLoaders = (options: any): any[] => {
+  const isDev = !isProd()
   const baseCssLoaders: any[] = [
     {
       loader: 'css-loader',
@@ -100,8 +100,10 @@ export const getSvgLoaders = (options: any) => {
  * @param options
  */
 export const getModuleRules = (options: any) => {
+  const isDev = !isProd()
   const baseCssLoaders = getBaseCssLoaders(options)
   const svgLoaders = getSvgLoaders(options)
+
   return [
     {
       test: /\.(j|t)sx?$/,
