@@ -1,5 +1,11 @@
 # @fbi-js/webpack-config-base
 
+## 1.6.3
+
+### Patch Changes
+
+- fix build svg file name error
+
 ## 1.6.2
 
 ### Patch Changes

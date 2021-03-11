@@ -1,9 +1,8 @@
 import path from 'path'
 import { isProd } from '../utils'
 
-const isDev = !isProd()
-
 export const getDevTools = (_options: any) => {
+  const isDev = !isProd()
   if (isDev) {
     return 'eval-cheap-module-source-map'
   }
@@ -17,6 +16,7 @@ export const getEntryConfig = (options: any) => {
 }
 
 export const getOutputConfig = (options: any) => {
+  const isDev = !isProd()
   if (isDev) {
     return {
       path: options.paths.dist,
@@ -70,6 +70,7 @@ export const getResolveLoader = (_options: any) => {
 }
 
 export const getCustomOptions = (options: any) => {
+  const isDev = !isProd()
   const customDevOptions = {
     devServer: options.devServer
   }

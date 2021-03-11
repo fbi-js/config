@@ -1,5 +1,13 @@
 # @fbi-js/webpack-config-vue
 
+## 1.4.3
+
+### Patch Changes
+
+- fix build svg file name error
+- Updated dependencies [undefined]
+  - @fbi-js/webpack-config-base@1.6.3
+
 ## 1.4.2
 
 ### Patch Changes

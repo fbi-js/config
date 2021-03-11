@@ -32,6 +32,7 @@ export const getBaseCssLoaders = (options: any): any[] => {
 }
 
 export const getSvgLoaders = (options: any) => {
+  const isDev = !isProd()
   const svgLoaders: any[] = [
     // suport SVG in CSS, Sass or Less
     {
@@ -42,7 +43,10 @@ export const getSvgLoaders = (options: any) => {
           loader: 'url-loader',
           options: {
             esModule: false,
-            generator: (content: any) => svgToMiniDataURI(content.toString())
+            generator: (content: any) => svgToMiniDataURI(content.toString()),
+            name: isDev
+              ? '[name].[hash].[ext]'
+              : `${options.paths.assets}/[name].[hash].[ext]`
           }
         }
       ]
@@ -78,7 +82,10 @@ export const getSvgLoaders = (options: any) => {
                 loader: 'url-loader',
                 options: {
                   limit: 4 * 1024, // 4kb
-                  esModule: false // fix [object module] bug, link: https://blog.csdn.net/csstmg/article/details/110172097
+                  esModule: false, // fix [object module] bug, link: https://blog.csdn.net/csstmg/article/details/110172097
+                  name: isDev
+                    ? '[name].[hash].[ext]'
+                    : `${options.paths.assets}/[name].[hash].[ext]`
                 }
               }
             ]
